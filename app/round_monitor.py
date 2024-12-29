@@ -2,7 +2,7 @@ import threading
 import time
 import pyautogui
 import pytesseract
-from PIL import Image, ImageEnhance
+from PIL import Image, ImageEnhance, ImageFilter
 import numpy as np
 from .config import Settings
 
@@ -46,14 +46,16 @@ class RoundMonitor:
                 Settings.settings['button_positions']['ROUND_COUNTER'][1],
                 Settings.settings['button_positions']['ROUND_DIMENSIONS'][0],
                 Settings.settings['button_positions']['ROUND_DIMENSIONS'][1]
-            )
+            ).split('/')
 
-            self.logger.info(f"Round counter: {round_counter}")
-            round_counter = str(round).split('/')
-            self.logger.info(f"Round counter: {round_counter}")
-
-            if len(round_counter) > 1 and round_counter[0].isdigit():
-                self.CUR_ROUND += round_counter[0]
+            # Run validation for round counter since OCR can be unreliable
+            if (len(round_counter) > 1 
+                and round_counter[0].isdigit()
+                and int(round_counter[0]) <= 100
+                and round_counter[1].isdigit()
+                and int(round_counter[1]) == 100
+                and int(round_counter[0]) > self.CUR_ROUND):
+                self.CUR_ROUND = int(round_counter[0])
                 self._notify_round_change()
 
             time.sleep(1)
@@ -99,9 +101,11 @@ class RoundMonitor:
             # Enhance brightness
             enhancer = ImageEnhance.Brightness(contrast_enhanced)
             final_image = enhancer.enhance(1.3)
+            final_image = final_image.filter(ImageFilter.MedianFilter(size=3))
+            final_image = final_image.convert('L')
             
             # Save the screenshot to disk for debugging
-            # screenshot.save('./screenshot.png')
+            # final_image.save('./screenshot.png')
             # Image.open('./screenshot.png').show()
             
             # Extract text from the image
