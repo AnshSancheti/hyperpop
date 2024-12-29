@@ -25,6 +25,8 @@
     "HERO": "U"
   },
   "button_positions": {
+    "ROUND_COUNTER": [1080, 100],
+    "ROUND_DIMENSIONS": [140, 37],
     "HERO_SELECT": [452, 857]
   },
   "button_positions_old": {

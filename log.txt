@@ -46,3 +46,220 @@
 2024-12-29 02:44:34 INFO     Current round: 6
 2024-12-29 02:44:35 INFO     Current round: 7
 2024-12-29 02:44:36 INFO     Current round: 8
+2024-12-29 03:21:19 INFO     ----Starting BTD6 Auto Clicker----
+2024-12-29 03:26:34 INFO     ----Starting BTD6 Auto Clicker----
+2024-12-29 03:26:56 INFO     ----Starting BTD6 Auto Clicker----
+2024-12-29 03:27:04 INFO     ----Starting BTD6 Auto Clicker----
+2024-12-29 03:27:15 INFO     ----Starting BTD6 Auto Clicker----
+2024-12-29 03:27:16 INFO     Current round: 
+2024-12-29 03:27:16 INFO     Current round: 1
+2024-12-29 03:27:17 INFO     Current round: 
+2024-12-29 03:27:17 INFO     Current round: 2
+2024-12-29 03:27:19 INFO     Current round: 
+2024-12-29 03:27:19 INFO     Current round: 3
+2024-12-29 03:27:20 INFO     Clicking HERO_SELECT
+2024-12-29 03:27:20 INFO     Current round: 
+2024-12-29 03:27:20 INFO     Current round: 4
+2024-12-29 03:27:21 INFO     Current round: 
+2024-12-29 03:27:21 INFO     Current round: 5
+2024-12-29 03:27:21 INFO     Round 5 action: Spawning extra enemies!
+2024-12-29 03:27:22 INFO     Current round: 
+2024-12-29 03:27:22 INFO     Current round: 6
+2024-12-29 03:28:43 INFO     ----Starting BTD6 Auto Clicker----
+2024-12-29 03:28:44 INFO     Current round: ster !1@ python
+2024-12-29 03:28:44 INFO     Current round: 1
+2024-12-29 03:28:45 INFO     Current round: ster !1@ python
+2024-12-29 03:28:45 INFO     Current round: 2
+2024-12-29 03:28:46 INFO     Current round: ster !1@ python
+2024-12-29 03:28:46 INFO     Current round: 3
+2024-12-29 03:28:47 INFO     Current round: ster !1@ python
+2024-12-29 03:28:47 INFO     Current round: 4
+2024-12-29 03:28:48 INFO     Current round: ster !1@ python
+2024-12-29 03:28:48 INFO     Current round: 5
+2024-12-29 03:28:48 INFO     Round 5 action: Spawning extra enemies!
+2024-12-29 03:28:48 INFO     Clicking HERO_SELECT
+2024-12-29 03:28:50 INFO     Current round: 61/100
+2024-12-29 03:28:50 INFO     Current round: 6
+2024-12-29 03:28:51 INFO     Current round: 61/100
+2024-12-29 03:28:51 INFO     Current round: 7
+2024-12-29 03:28:52 INFO     Current round: 61/100
+2024-12-29 03:28:52 INFO     Current round: 8
+2024-12-29 03:28:53 INFO     Current round: master 110 pi
+2024-12-29 03:28:53 INFO     Current round: 9
+2024-12-29 03:33:17 INFO     ----Starting BTD6 Auto Clicker----
+2024-12-29 03:33:22 INFO     Clicking HERO_SELECT
+2024-12-29 03:33:39 INFO     ----Starting BTD6 Auto Clicker----
+2024-12-29 03:33:44 INFO     Clicking HERO_SELECT
+2024-12-29 03:35:40 INFO     ----Starting BTD6 Auto Clicker----
+2024-12-29 03:35:45 INFO     Clicking HERO_SELECT
+2024-12-29 03:36:23 INFO     ----Starting BTD6 Auto Clicker----
+2024-12-29 03:36:23 INFO     Round counter: Current round: 61
+2024-12-29 03:36:25 INFO     Round counter: Current round: 6
+2024-12-29 03:36:26 INFO     Round counter: Current round: 61
+2024-12-29 03:36:27 INFO     Round counter: Current round: 7
+2024-12-29 03:36:28 INFO     Clicking HERO_SELECT
+2024-12-29 03:36:28 INFO     Round counter: Current round: 61
+2024-12-29 03:36:29 INFO     Round counter: Current round: ma
+2024-12-29 03:36:31 INFO     Round counter: Current round: 9
+2024-12-29 03:36:32 INFO     Round counter: <module ‘threading’
+2024-12-29 03:36:33 INFO     Round counter: WAVALeron|
+2024-12-29 03:36:34 INFO     Round counter: ThVAlexe)
+2024-12-29 03:36:36 INFO     Round counter: UVAkexe)
+2024-12-29 03:36:37 INFO     Round counter: 
+2024-12-29 03:36:38 INFO     Round counter: 
+2024-12-29 03:36:39 INFO     Round counter: 
+2024-12-29 03:36:40 INFO     Round counter: ster !1@ python
+2024-12-29 03:36:42 INFO     Round counter: 
+2024-12-29 03:37:10 INFO     ----Starting BTD6 Auto Clicker----
+2024-12-29 03:37:11 INFO     Round counter: ster !1@ python
+2024-12-29 03:37:12 INFO     Round counter: ster !1@ python
+2024-12-29 03:37:13 INFO     Round counter: ster !1@ python
+2024-12-29 03:37:14 INFO     Round counter: ster !1@ python
+2024-12-29 03:37:15 INFO     Round counter: ster !1@ python
+2024-12-29 03:37:15 INFO     Clicking HERO_SELECT
+2024-12-29 03:37:17 INFO     Round counter: ster !1@ python
+2024-12-29 03:37:18 INFO     Round counter: ster !1@ python
+2024-12-29 03:37:19 INFO     Round counter: ster !1@ python
+2024-12-29 03:37:20 INFO     Round counter: ster !1@ python
+2024-12-29 03:37:21 INFO     Round counter: 
+2024-12-29 03:37:23 INFO     Round counter: 73/100
+2024-12-29 03:37:24 INFO     Round counter: 73/100
+2024-12-29 03:37:25 INFO     Round counter: 73/100
+2024-12-29 03:37:27 INFO     Round counter: TEVA exe)
+2024-12-29 03:37:28 INFO     Round counter: 131100
+2024-12-29 03:37:29 INFO     Round counter: 13/100
+2024-12-29 03:37:30 INFO     Round counter: ster !1@ python
+2024-12-29 03:38:37 INFO     ----Starting BTD6 Auto Clicker----
+2024-12-29 03:38:37 INFO     Round counter: ster !1@ python
+2024-12-29 03:38:37 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:38:38 INFO     Round counter: ster !1@ python
+2024-12-29 03:38:38 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:38:40 INFO     Round counter: ster !1@ python
+2024-12-29 03:38:40 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:38:41 INFO     Round counter: ster !1@ python
+2024-12-29 03:38:41 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:38:42 INFO     Round counter: ster !1@ python
+2024-12-29 03:38:42 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:38:42 INFO     Clicking HERO_SELECT
+2024-12-29 03:38:43 INFO     Round counter: ster !1@ python
+2024-12-29 03:38:43 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:38:44 INFO     Round counter: ster !1@ python
+2024-12-29 03:38:44 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:38:46 INFO     Round counter: ster !1@ python
+2024-12-29 03:38:46 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:38:47 INFO     Round counter: 747/100 |
+2024-12-29 03:38:47 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:38:48 INFO     Round counter: 747100
+2024-12-29 03:38:48 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:38:49 INFO     Round counter: 741100
+2024-12-29 03:38:49 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:38:51 INFO     Round counter: 74/100
+2024-12-29 03:38:51 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:38:52 INFO     Round counter: x | master !:
+2024-12-29 03:38:52 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:02 INFO     ----Starting BTD6 Auto Clicker----
+2024-12-29 03:44:02 INFO     Round counter: 
+2024-12-29 03:44:02 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:03 INFO     Round counter: 
+2024-12-29 03:44:03 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:04 INFO     Round counter: 
+2024-12-29 03:44:04 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:06 INFO     Round counter: /100
+2024-12-29 03:44:06 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:07 INFO     Clicking HERO_SELECT
+2024-12-29 03:44:07 INFO     Round counter: 411100
+2024-12-29 03:44:07 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:08 INFO     Round counter: /
+2024-12-29 03:44:08 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:09 INFO     Round counter: 411100
+2024-12-29 03:44:09 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:11 INFO     Round counter: 
+2024-12-29 03:44:11 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:12 INFO     Round counter: ///3
+2024-12-29 03:44:12 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:13 INFO     Round counter: 
+2024-12-29 03:44:13 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:14 INFO     Round counter: 2
+2024-12-29 03:44:14 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:15 INFO     Round counter: 711100
+2024-12-29 03:44:15 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:17 INFO     Round counter: 71711100
+2024-12-29 03:44:17 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:18 INFO     Round counter: 7711100
+2024-12-29 03:44:18 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:19 INFO     Round counter: 7711100
+2024-12-29 03:44:19 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:21 INFO     Round counter: 
+2024-12-29 03:44:21 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:22 INFO     Round counter: 
+2024-12-29 03:44:22 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:23 INFO     Round counter: 
+2024-12-29 03:44:23 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:24 INFO     Round counter: 771100
+2024-12-29 03:44:24 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:25 INFO     Round counter: 711100
+2024-12-29 03:44:25 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:27 INFO     Round counter: 111100
+2024-12-29 03:44:27 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:28 INFO     Round counter: 771100
+2024-12-29 03:44:28 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:29 INFO     Round counter: 771100
+2024-12-29 03:44:29 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:31 INFO     Round counter: 111100
+2024-12-29 03:44:31 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:44:32 INFO     Round counter: 
+2024-12-29 03:44:32 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:00 INFO     ----Starting BTD6 Auto Clicker----
+2024-12-29 03:47:00 INFO     Round counter: 
+2024-12-29 03:47:00 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:01 INFO     Round counter: 
+2024-12-29 03:47:01 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:02 INFO     Round counter: 9022/
+2024-12-29 03:47:02 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:03 INFO     Round counter: 77/100
+2024-12-29 03:47:03 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:05 INFO     Round counter: 7711100
+2024-12-29 03:47:05 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:05 INFO     Clicking HERO_SELECT
+2024-12-29 03:47:06 INFO     Round counter: 7111100
+2024-12-29 03:47:06 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:07 INFO     Round counter: 
+2024-12-29 03:47:07 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:08 INFO     Round counter: 
+2024-12-29 03:47:08 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:09 INFO     Round counter: 7711100
+2024-12-29 03:47:09 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:11 INFO     Round counter: 7711100
+2024-12-29 03:47:11 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:12 INFO     Round counter: 111100
+2024-12-29 03:47:12 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:13 INFO     Round counter: 7711100
+2024-12-29 03:47:13 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:15 INFO     Round counter: 7711100
+2024-12-29 03:47:15 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:16 INFO     Round counter: 711100
+2024-12-29 03:47:16 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:17 INFO     Round counter: 711100
+2024-12-29 03:47:17 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:18 INFO     Round counter: 71100
+2024-12-29 03:47:18 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:20 INFO     Round counter: 7711100
+2024-12-29 03:47:20 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:21 INFO     Round counter: 718/100
+2024-12-29 03:47:21 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:22 INFO     Round counter: 787/100
+2024-12-29 03:47:22 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:24 INFO     Round counter: 18/100
+2024-12-29 03:47:24 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:25 INFO     Round counter: 
+2024-12-29 03:47:25 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:26 INFO     Round counter: 
+2024-12-29 03:47:26 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:27 INFO     Round counter: 
+2024-12-29 03:47:27 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:29 INFO     Round counter: 
+2024-12-29 03:47:29 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:30 INFO     Round counter: 44232
+2024-12-29 03:47:30 INFO     Round counter: ['<built-in function round>']
+2024-12-29 03:47:31 INFO     Round counter: 
+2024-12-29 03:47:31 INFO     Round counter: ['<built-in function round>']

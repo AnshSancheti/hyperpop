@@ -1,5 +1,7 @@
-import json, os, time, logging, sys
-from app import RoundMonitor, GameController, Settings
+import time, logging, sys
+from app.game_controller import GameController
+from app.round_monitor import RoundMonitor
+from app.config import Settings
 
 def setup_logger(name):
     formatter = logging.Formatter(fmt='%(asctime)s %(levelname)-8s %(message)s',
@@ -20,7 +22,7 @@ if __name__ == '__main__':
 
     round_monitor = RoundMonitor(logger)
     game_controller = GameController(round_monitor, logger)
-    
+
     # start monitoring once game has started
     round_monitor.start_monitoring()
 

@@ -1,5 +1,10 @@
 import threading
 import time
+import pyautogui
+import pytesseract
+from PIL import Image
+import numpy as np
+from .config import Settings
 
 class RoundMonitor:
     """
@@ -8,7 +13,7 @@ class RoundMonitor:
     It notifies listeners when the round changes but doesn't know about specific actions.
     """
     def __init__(self, logger):
-        self.CUR_ROUND = 0
+        self.CUR_ROUND = 6 # Impoppable mode starts at round 6
         self._running = False
         self._thread = None
         self.logger = logger
@@ -36,8 +41,21 @@ class RoundMonitor:
         Only responsible for incrementing the round and notifying listeners.
         """
         while self._running:
-            self.CUR_ROUND += 1
-            self._notify_round_change()
+            round_counter = self.extract_text_from_region(
+                Settings.settings['button_positions']['ROUND_COUNTER'][0],
+                Settings.settings['button_positions']['ROUND_COUNTER'][1],
+                Settings.settings['button_positions']['ROUND_DIMENSIONS'][0],
+                Settings.settings['button_positions']['ROUND_DIMENSIONS'][1]
+            )
+
+            self.logger.info(f"Round counter: {round_counter}")
+            round_counter = str(round).split('/')
+            self.logger.info(f"Round counter: {round_counter}")
+
+            if len(round_counter) > 1 and round_counter[0].isdigit():
+                self.CUR_ROUND += round_counter[0]
+                self._notify_round_change()
+
             time.sleep(1)
 
     def start_monitoring(self):
@@ -52,3 +70,36 @@ class RoundMonitor:
         self._running = False
         if self._thread:
             self._thread.join()
+
+    def extract_text_from_region(self, x, y, width, height) -> str:
+        """
+        Capture a specific region of the screen and extract text from it using OCR.
+        
+        Args:
+            x (int): The x-coordinate of the top-left corner of the region
+            y (int): The y-coordinate of the top-left corner of the region
+            width (int): The width of the region to capture
+            height (int): The height of the region to capture
+        
+        Returns:
+            str: Extracted text from the captured region
+        """
+        try:
+            # Take a screenshot of the specified region
+            screenshot = pyautogui.screenshot(region=(x, y, width, height))
+            
+            # Convert the screenshot to a format pytesseract can process
+            # We'll convert to RGB to ensure compatibility
+            screenshot = screenshot.convert('RGB')
+            
+            # Extract text from the image
+            text = pytesseract.image_to_string(
+                screenshot, 
+                config=f"-c tessedit_char_whitelist=0123456789/ --psm 7", 
+                nice=1)
+            
+            return text.strip()
+        
+        except Exception as e:
+            print(f"An error occurred: {str(e)}")
+            return None
