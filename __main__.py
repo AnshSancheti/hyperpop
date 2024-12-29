@@ -27,4 +27,4 @@ if __name__ == '__main__':
     round_monitor.start_monitoring()
 
     time.sleep(5) # Give 5 seconds to switch to the game window
-    game_controller.click_at_position(Settings.settings, 'HERO_SELECT')
+    game_controller.start_collection_game()

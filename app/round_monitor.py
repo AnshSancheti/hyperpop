@@ -1,10 +1,7 @@
 import threading
 import time
-import pyautogui
-import pytesseract
-from PIL import Image, ImageEnhance, ImageFilter
-import numpy as np
 from .config import Settings
+from app.img_to_str_reader import ImageToTextReader
 
 class RoundMonitor:
     """
@@ -13,7 +10,7 @@ class RoundMonitor:
     It notifies listeners when the round changes but doesn't know about specific actions.
     """
     def __init__(self, logger):
-        self.CUR_ROUND = 6 # Impoppable mode starts at round 6
+        self.CUR_ROUND = 5 # Impoppable mode starts at round 6
         self._running = False
         self._thread = None
         self.logger = logger
@@ -41,20 +38,26 @@ class RoundMonitor:
         Only responsible for incrementing the round and notifying listeners.
         """
         while self._running:
-            round_counter = self.extract_text_from_region(
-                Settings.settings['button_positions']['ROUND_COUNTER'][0],
-                Settings.settings['button_positions']['ROUND_COUNTER'][1],
-                Settings.settings['button_positions']['ROUND_DIMENSIONS'][0],
-                Settings.settings['button_positions']['ROUND_DIMENSIONS'][1]
-            ).split('/')
+            settings = Settings().load_global_settings()
+            round_counter = ImageToTextReader().extract_text_from_region(
+                settings['button_positions']['ROUND_COUNTER'][0],
+                settings['button_positions']['ROUND_COUNTER'][1],
+                settings['button_positions']['ROUND_DIMENSIONS'][0],
+                settings['button_positions']['ROUND_DIMENSIONS'][1]
+            )
+
+            if round_counter is not None:
+                round_counter = round_counter.split('/')
 
             # Run validation for round counter since OCR can be unreliable
-            if (len(round_counter) > 1 
-                and round_counter[0].isdigit()
-                and int(round_counter[0]) <= 100
-                and round_counter[1].isdigit()
-                and int(round_counter[1]) == 100
-                and int(round_counter[0]) > self.CUR_ROUND):
+            if (round_counter is not None 
+                and len(round_counter) > 1 # ensure we have a fraction
+                and round_counter[0].isdigit() # ensure the cur round is a number
+                and int(round_counter[0]) <= 100 # ensure the cur round is within bounds
+                and round_counter[1].isdigit() # ensure the total rounds is a number
+                and int(round_counter[1]) == 100 # ensure the total rounds is 100
+                and int(round_counter[0]) > self.CUR_ROUND # ensure the round has changed...
+                and int(round_counter[0]) < self.CUR_ROUND + 3):  # ...but not by too much
                 self.CUR_ROUND = int(round_counter[0])
                 self._notify_round_change()
 
@@ -72,50 +75,3 @@ class RoundMonitor:
         self._running = False
         if self._thread:
             self._thread.join()
-
-    def extract_text_from_region(self, x, y, width, height) -> str:
-        """
-        Capture a specific region of the screen and extract text from it using OCR.
-        
-        Args:
-            x (int): The x-coordinate of the top-left corner of the region
-            y (int): The y-coordinate of the top-left corner of the region
-            width (int): The width of the region to capture
-            height (int): The height of the region to capture
-        
-        Returns:
-            str: Extracted text from the captured region
-        """
-        try:
-            # Take a screenshot of the specified region
-            screenshot = pyautogui.screenshot(region=(x, y, width, height))
-            
-            # Convert the screenshot to a format pytesseract can process
-            # We'll convert to RGB to ensure compatibility
-            screenshot = screenshot.convert('RGB')
-
-            # Enhance contrast
-            enhancer = ImageEnhance.Contrast(screenshot)
-            contrast_enhanced = enhancer.enhance(2.0)
-            
-            # Enhance brightness
-            enhancer = ImageEnhance.Brightness(contrast_enhanced)
-            final_image = enhancer.enhance(1.3)
-            final_image = final_image.filter(ImageFilter.MedianFilter(size=3))
-            final_image = final_image.convert('L')
-            
-            # Save the screenshot to disk for debugging
-            # final_image.save('./screenshot.png')
-            # Image.open('./screenshot.png').show()
-            
-            # Extract text from the image
-            text = pytesseract.image_to_string(
-                final_image, 
-                config=f"-c tessedit_char_whitelist=0123456789/ --psm 7", 
-                nice=1)
-            
-            return text.strip()
-        
-        except Exception as e:
-            print(f"An error occurred: {str(e)}")
-            return None
