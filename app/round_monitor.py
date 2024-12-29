@@ -2,7 +2,7 @@ import threading
 import time
 import pyautogui
 import pytesseract
-from PIL import Image
+from PIL import Image, ImageEnhance
 import numpy as np
 from .config import Settings
 
@@ -91,10 +91,22 @@ class RoundMonitor:
             # Convert the screenshot to a format pytesseract can process
             # We'll convert to RGB to ensure compatibility
             screenshot = screenshot.convert('RGB')
+
+            # Enhance contrast
+            enhancer = ImageEnhance.Contrast(screenshot)
+            contrast_enhanced = enhancer.enhance(2.0)
+            
+            # Enhance brightness
+            enhancer = ImageEnhance.Brightness(contrast_enhanced)
+            final_image = enhancer.enhance(1.3)
+            
+            # Save the screenshot to disk for debugging
+            # screenshot.save('./screenshot.png')
+            # Image.open('./screenshot.png').show()
             
             # Extract text from the image
             text = pytesseract.image_to_string(
-                screenshot, 
+                final_image, 
                 config=f"-c tessedit_char_whitelist=0123456789/ --psm 7", 
                 nice=1)
             
