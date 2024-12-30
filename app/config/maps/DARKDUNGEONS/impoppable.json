@@ -93,6 +93,6 @@
     "90": ["place spike", "upgrade spike 2 2 2 2 2 1 1"],
     "95": ["upgrade sniper1 3", "place boomer"],
     "97": ["upgrade boomer 3 3 3 3 2 2"],
-    "98:": ["upgrade boomer 3"]
+    "98": ["upgrade boomer 3"]
   }
 }

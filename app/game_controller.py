@@ -13,10 +13,11 @@ class GameController:
         self.round_monitor.add_round_change_listener(self.handle_round_change)
         self.logger = logger
         self.global_settings = Settings().load_global_settings()
-        self.map = 'FLOOPEDVALLEY' # Default map for testing
+        self.map = 'DARKCASTLE' # Default map for testing
         self.map_settings = Settings().load_map_settings(self.map, 'impoppable')
         self.milestone_rounds = self.map_settings['instructions']['milestones']
         self.map_ended = False
+        self.current_points = 18
 
     def handle_round_change(self, current_round):
         """
@@ -54,11 +55,41 @@ class GameController:
         """
         Run the instructions to end the map and go back to the home screen
         """
+        self.current_points += 55
         self.click_at_position('END_GAME_NEXT_BUTTON')
-        time.sleep(.3)
+        time.sleep(1)
         self.click_at_position('END_GAME_NEXT_BUTTON')
-        time.sleep(.3)
+        time.sleep(1)
         self.click_at_position('END_GAME_HOME_BUTTON')
+        time.sleep(2)
+        if self.current_points > 70:
+            self.click_at_position('COLLECT_INSTA')
+            time.sleep(1)
+            self.click_at_position('3INSTA1')
+            time.sleep(1)
+            self.click_at_position('3INSTA1')
+            time.sleep(1)
+            self.click_at_position('3INSTA2')
+            time.sleep(1)
+            self.click_at_position('3INSTA2')
+            time.sleep(1)
+            self.click_at_position('3INSTA3')
+            time.sleep(1)
+            self.click_at_position('3INSTA3')
+            time.sleep(1)
+            self.click_at_position('2INSTA1')
+            time.sleep(1)
+            self.click_at_position('2INSTA1')
+            time.sleep(1)
+            self.click_at_position('2INSTA2')
+            time.sleep(1)
+            self.click_at_position('2INSTA2')
+            time.sleep(1)
+            self.click_at_position('INSTASELECTOK')
+            time.sleep(1)
+            self.click_at_position('BACK_BUTTON')
+            time.sleep(2)
+            self.current_points -= 70
         self.map_ended = True
 
     def run_instruction_group(self, instructions):
