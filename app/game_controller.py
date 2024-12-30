@@ -13,9 +13,10 @@ class GameController:
         self.round_monitor.add_round_change_listener(self.handle_round_change)
         self.logger = logger
         self.global_settings = Settings().load_global_settings()
-        self.map = 'DARKCASTLE' # Default map for testing
+        self.map = 'FLOOPEDVALLEY' # Default map for testing
         self.map_settings = Settings().load_map_settings(self.map, 'impoppable')
         self.milestone_rounds = self.map_settings['instructions']['milestones']
+        self.map_ended = False
 
     def handle_round_change(self, current_round):
         """
@@ -33,7 +34,7 @@ class GameController:
         for round in remove_rounds:
             self.milestone_rounds.remove(round)
 
-        if round == 100:
+        if current_round == 100:
             self.logger.info("Last round! Assuming it takes 20 seconds to finish")
             time.sleep(20)
             self.run_end_map_instructions()
@@ -43,6 +44,7 @@ class GameController:
         Run the instructions to start the map.
         """
         instructions = self.map_settings['instructions']['start']
+        time.sleep(1)
         self.run_instruction_group(instructions)
         pyautogui.press('space') 
         time.sleep(.5)
@@ -57,6 +59,7 @@ class GameController:
         self.click_at_position('END_GAME_NEXT_BUTTON')
         time.sleep(.3)
         self.click_at_position('END_GAME_HOME_BUTTON')
+        self.map_ended = True
 
     def run_instruction_group(self, instructions):
         """Run group of instructions.
@@ -87,9 +90,12 @@ class GameController:
         pos = self.map_settings['towers'][tower_id]['coords']
         tower_type = self.map_settings['towers'][tower_id]['type']
         shortcut = self.global_settings['tower_shortcuts'][tower_type]
-
+        
         pyautogui.press(shortcut)
-        time.sleep(.2)
+        if tower_type == 'HERO':
+            time.sleep(.4) # Sometimes heros just wont select? idk
+            pyautogui.press(shortcut)
+        time.sleep(.4)
         pyautogui.click(pos[0], pos[1])
 
     def upgrade_tower(self, tower_id, upgrade_path):
@@ -107,9 +113,9 @@ class GameController:
 
         upgrade_shortcut = self.global_settings['tower_shortcuts'][upgrade_path]
         pyautogui.click(pos[0], pos[1])
-        time.sleep(.2)
+        time.sleep(.3)
         pyautogui.press(upgrade_shortcut)
-        time.sleep(.2)
+        time.sleep(.3)
         pyautogui.press('esc')
 
     def start_collection_game(self):
@@ -119,6 +125,7 @@ class GameController:
         """
         self.click_at_position('COLLECTION_EVENT_SELECT')
         self.click_at_position('COLLECTION_EVENT_START')
+        time.sleep(.5)
         
         # Determine map selection, and update class map variables
         map_name = ImageToTextReader().extract_text_from_region(
@@ -145,7 +152,7 @@ class GameController:
         self.click_at_position('COLLECTION_EVENT_EXPERT_MAP_SELECT')
         self.click_at_position('HARD_MODE_SELECT')
         self.click_at_position('IMPOPPABLE_MODE_SELECT')
-        time.sleep(4) # Wait for map to load
+        time.sleep(5) # Wait for map to load
         self.click_at_position('IMPOPPABLE_GAMESTART_OK')
 
     def click_at_position(self, selection):

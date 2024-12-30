@@ -1,0 +1,135 @@
+{
+  "startRound": 6,
+  "hero": "ETIENNE",
+  "towers": {
+    "etienne": {
+      "type": "HERO",
+      "coords": [302, 475]
+    },
+    "sub": {
+      "type": "SUBMARINE",
+      "coords": [1095, 770]
+    },
+    "dart": {
+      "type": "DART",
+      "coords": [610, 830]
+    },
+    "druid": {
+      "type": "DRUID",
+      "coords": [550, 800]
+    },
+    "sniper1": {
+      "type": "SNIPER",
+      "coords": [216, 224]
+    },
+    "boat": {
+      "type": "BUCCANEER",
+      "coords": [1175, 750]
+    },
+    "sniper2": {
+      "type": "SNIPER",
+      "coords": [502, 298]
+    },
+    "wizard": {
+      "type": "WIZARD",
+      "coords": [170, 728]
+    },
+    "ninja": {
+      "type": "NINJA",
+      "coords": [550, 880]
+    },
+    "banana": {
+      "type": "BANANA",
+      "coords": [827, 483]
+    },
+    "ace": {
+      "type": "ACE",
+      "coords": [750, 582]
+    },
+    "spike": {
+      "type": "SPIKE",
+      "coords": [240, 290]
+    },
+    "boomer": {
+      "type": "BOOMERANG",
+      "coords": [630, 350]
+    }
+  },
+  "instructions": {
+    "milestones": [
+      7, 8, 9, 11, 15, 16, 17, 18, 20, 21, 23, 26, 30, 35, 39, 43, 44, 51, 53,
+      56, 62, 66, 79, 82, 90, 95, 97, 98
+    ],
+    "start": ["place etienne", "place sub", "place dart"],
+    "7": ["place druid"],
+    "8": ["place boat"],
+    "9": ["place sniper1"],
+    "11": ["upgrade boat 2"],
+    "15": ["upgrade druid 2", "upgrade druid 2", "upgrade druid 2"],
+    "16": ["upgrade sniper1 1"],
+    "17": ["upgrade druid 1"],
+    "18": ["place sniper2", "upgrade sniper2 1", "upgrade sniper2 2"],
+    "20": ["upgrade boat 1"],
+    "21": ["upgrade boat 2"],
+    "23": ["upgrade sniper1 3", "upgrade sniper1 3"],
+    "26": ["upgrade sub 1", "upgrade sub 1", "upgrade sub 1"],
+    "30": [
+      "place wizard",
+      "upgrade wizard 2",
+      "upgrade wizard 2",
+      "upgrade wizard 3",
+      "upgrade wizard 3",
+      "place ninja",
+      "upgrade ninja 1",
+      "upgrade ninja 1",
+      "upgrade ninja 3",
+      "upgrade ninja 3"
+    ],
+    "35": ["upgrade boat 1", "upgrade boat 1"],
+    "39": ["upgrade boat 1"],
+    "43": ["upgrade sniper2 1", "upgrade sniper2 1", "upgrade sniper2 2"],
+    "44": ["upgrade sniper2 1"],
+    "51": ["upgrade boat 1"],
+    "53": [
+      "place banana",
+      "upgrade banana 3",
+      "upgrade banana 3",
+      "upgrade banana 3",
+      "upgrade banana 2",
+      "upgrade banana 2"
+    ],
+    "56": ["upgrade sniper1 3", "upgrade sniper1 3", "upgrade sniper1 1"],
+    "62": [
+      "place ace",
+      "upgrade ace 3",
+      "upgrade ace 3",
+      "upgrade ace 3",
+      "upgrade ace 1",
+      "upgrade ace 1",
+      "upgrade druid 2"
+    ],
+    "66": ["upgrade ace 3"],
+    "79": ["upgrade druid 2"],
+    "82": ["upgrade sniper2 1"],
+    "90": [
+      "place spike",
+      "upgrade spike 2",
+      "upgrade spike 2",
+      "upgrade spike 2",
+      "upgrade spike 2",
+      "upgrade spike 2",
+      "upgrade spike 1",
+      "upgrade spike 1"
+    ],
+    "95": ["upgrade sniper1 3", "place boomer"],
+    "97": [
+      "upgrade boomer 3",
+      "upgrade boomer 3",
+      "upgrade boomer 3",
+      "upgrade boomer 3",
+      "upgrade boomer 2",
+      "upgrade boomer 2"
+    ],
+    "98:": ["upgrade boomer 3"]
+  }
+}

@@ -11,6 +11,7 @@ class RoundMonitor:
     """
     def __init__(self, logger):
         self.CUR_ROUND = 5 # Impoppable mode starts at round 6
+        self.ROUND_COUNTER_FAILS = 0
         self._running = False
         self._thread = None
         self.logger = logger
@@ -60,6 +61,9 @@ class RoundMonitor:
                 and int(round_counter[0]) < self.CUR_ROUND + 30):  # ...but not by too much
                 self.CUR_ROUND = int(round_counter[0])
                 self._notify_round_change()
+                self.ROUND_COUNTER_FAILS = 0
+            else:
+                self.ROUND_COUNTER_FAILS += 1
 
             time.sleep(1)
 

@@ -1,176 +1,128 @@
 {
-    "startRound": 6,
-    "hero": "OBYN",
-    "towers": {
-      "druid1": {
-        "type": "DRUID",
-        "coords": [796, 425]
-      },
-      "obyn": {
-        "type": "HERO",
-        "coords": [732, 425]
-      },
-      "druid2": {
-        "type": "DRUID",
-        "coords": [669, 425]
-      },
-      "alchemist": {
-        "type": "ALCHEMIST",
-        "coords": [611, 425]
-      },
-      "druid3": {
-        "type": "DRUID",
-        "coords": [553, 422]
-      },
-      "druid4": {
-        "type": "DRUID",
-        "coords": [800, 370]
-      },
-      "druid5": {
-        "type": "DRUID",
-        "coords": [737, 370]
-      },
-      "druid6": {
-        "type": "DRUID",
-        "coords": [675, 370]
-      },
-      "druid7": {
-        "type": "DRUID",
-        "coords": [613, 370]
-      },
-      "druid8": {
-        "type": "DRUID",
-        "coords": [552, 364]
-      },
-      "spike": {
-        "type": "SPIKE",
-        "coords": [1200, 517]
-      },
-      "village": {
-        "type": "VILLAGE",
-        "coords": [678, 300]
-      }
+  "startRound": 6,
+  "hero": "OBYN",
+  "towers": {
+    "druid1": {
+      "type": "DRUID",
+      "coords": [796, 425]
     },
-    "instructions": {
-      "milestones": [7,9,11,13,16,17,19,27,29,32,34,36,39,43,45,50,53,67,79,85],
-      "start": [
-        "place druid1",
-        "place obyn",
-        "upgrade druid1 1"
-      ],
-      "7": [
-        "upgrade druid1 3"
-      ],
-      "9": [
-        "upgrade druid1 1"
-      ],
-      "11": [
-        "place druid2",
-        "upgrade druid2 2",
-        "upgrade druid2 3"
-      ],
-      "13": [
-        "place druid8",
-        "upgrade druid8 2"
-      ],
-      "16": [
-        "upgrade druid8 2",
-        "upgrade druid8 2"
-      ],
-      "17": [
-        "upgrade druid8 1"
-      ],
-      "19": [
-        "place spike"
-      ],
-      "27": [
-        "place alchemist",
-        "place druid3",
-        "place druid4",
-        "place druid5",
-        "place druid6",
-        "place druid7",
-        "upgrade spike 1"
-      ],
-      "29": [
-        "upgrade druid3 2",
-        "upgrade druid3 3",
-        "upgrade druid4 2",
-        "upgrade druid4 3",
-        "upgrade druid5 2",
-        "upgrade druid5 3",
-        "upgrade druid6 2",
-        "upgrade druid6 3",
-        "upgrade druid7 2",
-        "upgrade druid7 3"
-      ],
-      "32": [
-        "upgrade druid1 1"
-      ],
-      "34": [
-        "upgrade spike 1",
-        "upgrade spike 2",
-        "upgrade spike 2"
-      ],
-      "36": [
-        "upgrade alchemist 1",
-        "upgrade alchemist 1",
-        "upgrade alchemist 1"
-      ],
-      "39": [
-        "upgrade druid2 3",
-        "upgrade druid2 3",
-        "upgrade druid2 3"
-      ],
-      "43": [
-        "place village",
-        "upgrade village 1",
-        "upgrade village 1",
-        "upgrade village 2",
-        "upgrade village 2"
-      ],
-      "45": [
-        "upgrade druid8 2",
-        "upgrade alchemist 1",
-        "upgrade alchemist 2"
-      ],
-      "50": [
-        "upgrade druid3 2",
-        "upgrade druid3 3",
-        "upgrade druid3 3",
-        "upgrade druid3 3",
-        "upgrade druid4 2",
-        "upgrade druid4 3",
-        "upgrade druid4 3",
-        "upgrade druid4 3",
-        "upgrade druid5 2",
-        "upgrade druid5 3",
-        "upgrade druid5 3",
-        "upgrade druid5 3",
-        "upgrade druid6 2",
-        "upgrade druid6 3",
-        "upgrade druid6 3",
-        "upgrade druid6 3",
-        "upgrade druid7 2",
-        "upgrade druid7 3",
-        "upgrade druid7 3",
-        "upgrade druid7 3",
-        "upgrade druid2 2"
-      ],
-      "53": [
-        "upgrade village 2"
-      ],
-      "67": [
-        "upgrade druid2 3"
-      ],
-      "79": [
-        "upgrade druid8 2",
-        "upgrade druid8 1"
-      ],
-      "85":[
-        "upgrade spike 2",
-        "upgrade spike 2",
-        "upgrade spike 2"
-      ]
+    "obyn": {
+      "type": "HERO",
+      "coords": [732, 425]
+    },
+    "druid2": {
+      "type": "DRUID",
+      "coords": [669, 425]
+    },
+    "alchemist": {
+      "type": "ALCHEMIST",
+      "coords": [611, 425]
+    },
+    "druid3": {
+      "type": "DRUID",
+      "coords": [553, 422]
+    },
+    "druid4": {
+      "type": "DRUID",
+      "coords": [800, 370]
+    },
+    "druid5": {
+      "type": "DRUID",
+      "coords": [737, 370]
+    },
+    "druid6": {
+      "type": "DRUID",
+      "coords": [675, 370]
+    },
+    "druid7": {
+      "type": "DRUID",
+      "coords": [613, 370]
+    },
+    "druid8": {
+      "type": "DRUID",
+      "coords": [552, 364]
+    },
+    "spike": {
+      "type": "SPIKE",
+      "coords": [1200, 517]
+    },
+    "village": {
+      "type": "VILLAGE",
+      "coords": [678, 300]
     }
+  },
+  "instructions": {
+    "milestones": [
+      7, 9, 11, 13, 16, 17, 19, 27, 29, 32, 34, 36, 39, 43, 45, 50, 53, 67, 79,
+      85
+    ],
+    "start": ["place druid1", "place obyn", "upgrade druid1 1"],
+    "7": ["upgrade druid1 3"],
+    "9": ["upgrade druid1 1"],
+    "11": ["place druid2", "upgrade druid2 2", "upgrade druid2 3"],
+    "13": ["place druid8", "upgrade druid8 2"],
+    "16": ["upgrade druid8 2", "upgrade druid8 2"],
+    "17": ["upgrade druid8 1"],
+    "19": ["place spike"],
+    "27": [
+      "place alchemist",
+      "place druid3",
+      "place druid4",
+      "place druid5",
+      "place druid6",
+      "place druid7",
+      "upgrade spike 1"
+    ],
+    "29": [
+      "upgrade druid3 2",
+      "upgrade druid3 3",
+      "upgrade druid4 2",
+      "upgrade druid4 3",
+      "upgrade druid5 2",
+      "upgrade druid5 3",
+      "upgrade druid6 2",
+      "upgrade druid6 3",
+      "upgrade druid7 2",
+      "upgrade druid7 3"
+    ],
+    "32": ["upgrade druid1 1"],
+    "34": ["upgrade spike 1", "upgrade spike 2", "upgrade spike 2"],
+    "36": ["upgrade alchemist 1", "upgrade alchemist 1", "upgrade alchemist 1"],
+    "39": ["upgrade druid2 3", "upgrade druid2 3", "upgrade druid2 3"],
+    "43": [
+      "place village",
+      "upgrade village 1",
+      "upgrade village 1",
+      "upgrade village 2",
+      "upgrade village 2"
+    ],
+    "45": ["upgrade druid8 2", "upgrade alchemist 1", "upgrade alchemist 2"],
+    "50": [
+      "upgrade druid3 2",
+      "upgrade druid3 3",
+      "upgrade druid3 3",
+      "upgrade druid3 3",
+      "upgrade druid4 2",
+      "upgrade druid4 3",
+      "upgrade druid4 3",
+      "upgrade druid4 3",
+      "upgrade druid5 2",
+      "upgrade druid5 3",
+      "upgrade druid5 3",
+      "upgrade druid5 3",
+      "upgrade druid6 2",
+      "upgrade druid6 3",
+      "upgrade druid6 3",
+      "upgrade druid6 3",
+      "upgrade druid7 2",
+      "upgrade druid7 3",
+      "upgrade druid7 3",
+      "upgrade druid7 3",
+      "upgrade druid2 2"
+    ],
+    "53": ["upgrade village 2"],
+    "67": ["upgrade druid2 3"],
+    "79": ["upgrade druid8 2", "upgrade druid8 1"],
+    "85": ["upgrade spike 2", "upgrade spike 2", "upgrade spike 2"]
   }
+}

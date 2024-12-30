@@ -1,0 +1,35 @@
+{
+  "startRound": 6,
+  "hero": "BRICKNELL",
+  "towers": {
+    "bricknell": {
+      "type": "HERO",
+      "coords": [872, 440]
+    },
+    "sub1": {
+      "type": "SUBMARINE",
+      "coords": [785, 190]
+    },
+    "sub2": {
+      "type": "SUBMARINE",
+      "coords": [870, 720]
+    },
+    "boat1": {
+      "type": "BUCCANEER",
+      "coords": [884, 510]
+    },
+    "sub3": {
+      "type": "SUBMARINE",
+      "coords": [1095, 770]
+    }
+  },
+  "instructions": {
+    "milestones": [7, 8, 18],
+    "start": ["place bricknell", "place sub1"],
+    "7": ["place sub2"],
+    "8": ["place boat1"],
+    "18": ["upgrade boat1 1", "upgrade boat1 1", "upgrade boat1 1"],
+    "20": ["upgrade boat1 2", "upgrade boat1 2"],
+    "23": ["upgrade sub1 1", "upgrade sub1 1", "upgrade sub1 1"]
+  }
+}

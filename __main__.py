@@ -24,9 +24,21 @@ if __name__ == '__main__':
     game_controller = GameController(round_monitor, logger)
 
     time.sleep(5) # Give 5 seconds to switch to the game window
+    #game_controller.run_start_map_instructions()
+    #round_monitor.start_monitoring()
+    
     while True:
+        game_controller.map_ended = False
         game_controller.start_collection_game()
         # start monitoring once game has started
         round_monitor.start_monitoring()
         game_controller.run_start_map_instructions()
+
+        # 2 minutes of failed round counter likely means game is over, go home
+        while round_monitor.ROUND_COUNTER_FAILS <= 120 and not game_controller.map_ended:
+            time.sleep(1) 
         round_monitor.stop_monitoring()
+
+        if round_monitor.ROUND_COUNTER_FAILS > 120:
+            game_controller.click_at_position('END_GAME_HOME_BUTTON')
+            round_monitor.ROUND_COUNTER_FAILS = 0
