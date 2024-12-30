@@ -57,7 +57,7 @@ class RoundMonitor:
                 and round_counter[1].isdigit() # ensure the total rounds is a number
                 and int(round_counter[1]) == 100 # ensure the total rounds is 100
                 and int(round_counter[0]) > self.CUR_ROUND # ensure the round has changed...
-                and int(round_counter[0]) < self.CUR_ROUND + 3):  # ...but not by too much
+                and int(round_counter[0]) < self.CUR_ROUND + 30):  # ...but not by too much
                 self.CUR_ROUND = int(round_counter[0])
                 self._notify_round_change()
 

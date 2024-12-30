@@ -24,14 +24,16 @@ class GameController:
         self.logger.info(f"Current round: {current_round}") # For debugging
         
         remove_rounds = []
-        print(f"Remaining milestone rounds: {self.milestone_rounds}")
         for round in self.milestone_rounds:
             if current_round >= round: # Handle cases where we missed a round due to OCR errors
-                self.run_instruction_group(self.map_settings['instructions']['milestones'][round])
+                self.logger.info(f"Running instructions for round {round}")
+                self.run_instruction_group(self.map_settings['instructions'][str(round)])
                 remove_rounds.append(round)
         
         for round in remove_rounds:
             self.milestone_rounds.remove(round)
+        
+        print(f"Remaining milestone rounds: {self.milestone_rounds}")
 
     def run_start_map_instructions(self):
         """
