@@ -117,7 +117,7 @@ class GameController:
             upgrade_shortcut = self.global_settings['tower_shortcuts'][upgrade_path]
             time.sleep(.3)
             pyautogui.press(upgrade_shortcut)
-            time.sleep(.1)
+            time.sleep(.2)
         pyautogui.press('esc')
 
     def start_collection_game(self):
