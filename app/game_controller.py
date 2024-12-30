@@ -52,11 +52,11 @@ class GameController:
         """
         Run the instructions to end the map and go back to the home screen
         """
-        self.click_at_position(self.global_settings, 'END_GAME_NEXT_BUTTON')
+        self.click_at_position('END_GAME_NEXT_BUTTON')
         time.sleep(.3)
-        self.click_at_position(self.global_settings, 'END_GAME_NEXT_BUTTON')
+        self.click_at_position('END_GAME_NEXT_BUTTON')
         time.sleep(.3)
-        self.click_at_position(self.global_settings, 'END_GAME_HOME_BUTTON')
+        self.click_at_position('END_GAME_HOME_BUTTON')
 
     def run_instruction_group(self, instructions):
         """Run group of instructions.
@@ -117,8 +117,8 @@ class GameController:
         Checks the collection game mode to determine current map
         Also selects hero and enters into the map.
         """
-        self.click_at_position(self.global_settings, 'COLLECTION_EVENT_SELECT')
-        self.click_at_position(self.global_settings, 'COLLECTION_EVENT_START')
+        self.click_at_position('COLLECTION_EVENT_SELECT')
+        self.click_at_position('COLLECTION_EVENT_START')
         
         # Determine map selection, and update class map variables
         map_name = ImageToTextReader().extract_text_from_region(
@@ -134,22 +134,22 @@ class GameController:
         self.milestone_rounds = self.map_settings['instructions']['milestones']
 
         # Select relevant hero for map
-        self.click_at_position(self.global_settings, 'HERO_SELECT_IN_MAP_SELECT')
-        self.click_at_position(self.global_settings, f'{self.map_settings["hero"]}_SELECT')
-        self.click_at_position(self.global_settings, 'HERO_SELECT_CONFIRM')
-        self.click_at_position(self.global_settings, 'BACK_BUTTON')
-        self.click_at_position(self.global_settings, 'BACK_BUTTON')
+        self.click_at_position('HERO_SELECT_IN_MAP_SELECT')
+        self.click_at_position(f'{self.map_settings["hero"]}_SELECT')
+        self.click_at_position('HERO_SELECT_CONFIRM')
+        self.click_at_position('BACK_BUTTON')
+        self.click_at_position('BACK_BUTTON')
 
         # Start map in impoppable mode
-        self.click_at_position(self.global_settings, 'COLLECTION_EVENT_START')
-        self.click_at_position(self.global_settings, 'COLLECTION_EVENT_EXPERT_MAP_SELECT')
-        self.click_at_position(self.global_settings, 'HARD_MODE_SELECT')
-        self.click_at_position(self.global_settings, 'IMPOPPABLE_MODE_SELECT')
+        self.click_at_position('COLLECTION_EVENT_START')
+        self.click_at_position('COLLECTION_EVENT_EXPERT_MAP_SELECT')
+        self.click_at_position('HARD_MODE_SELECT')
+        self.click_at_position('IMPOPPABLE_MODE_SELECT')
         time.sleep(4) # Wait for map to load
-        self.click_at_position(self.global_settings, 'IMPOPPABLE_GAMESTART_OK')
+        self.click_at_position('IMPOPPABLE_GAMESTART_OK')
 
-    def click_at_position(self, settings, selection):
-        pos = settings['button_positions'][selection]
+    def click_at_position(self, selection):
+        pos = self.global_settings['button_positions'][selection]
         self.logger.info(f"Clicking {selection}")
         pyautogui.click(pos[0], pos[1])
         time.sleep(.5)
