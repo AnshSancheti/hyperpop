@@ -1,5 +1,5 @@
 {
-  "monkey_shortcuts": {
+  "tower_shortcuts": {
     "DART": "Q",
     "BOOMERANG": "W",
     "BOMB": "E",
@@ -17,12 +17,15 @@
     "SUPER": "S",
     "NINJA": "D",
     "ALCHEMIST": "F",
-    "DRUID": "G",
+    "DRUID": "g",
     "BANANA": "H",
     "ENGINEER": "L",
     "SPIKE": "J",
     "VILLAGE": "K",
-    "HERO": "U"
+    "HERO": "u",
+    "UPGRADE_TOP": ",",
+    "UPGRADE_MIDDLE": ".",
+    "UPGRADE_BOTTOM": "/"
   },
   "button_positions": {
     "ROUND_COUNTER": [1080, 100],

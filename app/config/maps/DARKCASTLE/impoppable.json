@@ -2,20 +2,25 @@
     "startRound": 6,
     "towers": {
       "obyn": {
-        "tower": "HERO",
+        "type": "HERO",
         "coords": [737, 432]
       },
       "druid1": {
-        "tower": "DRUID",
+        "type": "DRUID",
         "coords": [800, 432]
       }
     },
     "instructions": {
+      "milestones": [7,8],
       "start": [
-        "place obyn",
         "place druid1",
-        "upgrade druid1 001",
-        "upgrade druid 010"
+        "place obyn"
+      ],
+      "7": [
+        "upgrade druid1 3"
+      ],
+      "8": [
+        "upgrade druid1 2"
       ]
     }
   }

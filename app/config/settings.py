@@ -7,7 +7,7 @@ class Settings:
             return json.load(f)
         
     def load_map_settings(self, map_name, difficulty):
-        return self.load_settings('app', 'config', 'maps', map_name, difficulty)
+        return self.load_settings('app', 'config', 'maps', map_name, difficulty + '.json')
 
     def load_global_settings(self):
         return self.load_settings('app', 'config', 'settings.json')    

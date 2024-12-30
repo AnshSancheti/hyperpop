@@ -1,7 +1,5 @@
-import pyautogui
-import pytesseract
 from PIL import Image, ImageEnhance, ImageFilter, ImageOps
-import datetime
+import datetime, os, pyautogui, pytesseract
 
 class ImageToTextReader:
     def extract_text_from_region(self, x, y, width, height, charwhitelist='0123456789/') -> str:
@@ -21,11 +19,16 @@ class ImageToTextReader:
             # Take a screenshot of the specified region
             screenshot = pyautogui.screenshot(region=(x, y, width, height))
             
+            # Save the screenshot to disk for debugging
+            curtime = datetime.datetime.now()
+            screenshot.save(f'./screenshot_{curtime}.png')
+            Image.open(f'./screenshot_{curtime}.png').show()
+
             # Convert the screenshot to a format pytesseract can process
             # We'll convert to RGB to ensure compatibility
             screenshot = screenshot.convert('RGB')
 
-            # Enhance contrast 
+            # Enhance contrast
             enhancer = ImageEnhance.Contrast(screenshot)
             contrast_enhanced = enhancer.enhance(2.0)
             contrast_enhanced = ImageOps.invert(contrast_enhanced)
@@ -36,11 +39,6 @@ class ImageToTextReader:
             final_image = final_image.filter(ImageFilter.MedianFilter(size=3))
             final_image = final_image.point(lambda x: 0 if x < 10 else 255)
             final_image = final_image.convert('L') # Convert to grayscale
-            
-            # Save the screenshot to disk for debugging
-            #curtime = datetime.datetime.now()
-            #final_image.save(f'./screenshot_{curtime}.png')
-            #Image.open(f'./screenshot_{curtime}.png').show()
             
             # Extract text from the image using settings from pytesseract
             # https://pypi.org/project/pytesseract/
@@ -55,12 +53,12 @@ class ImageToTextReader:
             print(f"An error occurred: {str(e)}")
             return None
 
-    def extract_text_from_screenshot(self) -> str:
+    def extract_text_from_screenshot(self, filepath) -> str:
         """
         Helper functiuon to confirm the OCR is working as expected.
         """
         try:
-            screenshot = Image.open(f'./screenshot.png')
+            screenshot = Image.open(filepath)
             screenshot = screenshot.convert('RGB')
 
             # Enhance contrast 
@@ -95,7 +93,8 @@ class ImageToTextReader:
 
 # Main function to test the ImageToTextReader class
 if __name__ == '__main__':
-    # Example usage
+    # Test the OCR on a set of screenshots, run from root directory
     reader = ImageToTextReader()
-    text = reader.extract_text_from_screenshot()
-    print(text)
+    for filename in os.listdir('./app/test_screenshots'):
+        text = reader.extract_text_from_screenshot(f'./app/test_screenshots/{filename}')
+        print(f"Extracted text from {filename}: {text}")
