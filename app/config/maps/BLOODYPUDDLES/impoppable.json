@@ -1,0 +1,16 @@
+{
+  "startRound": 6,
+  "hero": "ETIENNE",
+  "towers": {
+    "etienne": {
+        "type": "HERO",
+        "coords": [732, 425]
+      }
+  },
+  "instructions": {
+      "milestones": [],
+      "start": [
+        "place etienne"
+      ]
+    }
+}

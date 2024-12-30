@@ -1,5 +1,6 @@
 {
     "startRound": 6,
+    "hero": "OBYN",
     "towers": {
       "druid1": {
         "type": "DRUID",

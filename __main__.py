@@ -23,8 +23,9 @@ if __name__ == '__main__':
     round_monitor = RoundMonitor(logger)
     game_controller = GameController(round_monitor, logger)
 
-    # start monitoring once game has started
-    round_monitor.start_monitoring()
-
     time.sleep(5) # Give 5 seconds to switch to the game window
-    game_controller.run_start_map_instructions()
+    while True:
+        game_controller.start_collection_game()
+        # start monitoring once game has started
+        round_monitor.start_monitoring()
+        game_controller.run_start_map_instructions()
