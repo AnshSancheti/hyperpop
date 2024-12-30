@@ -23,10 +23,15 @@ if __name__ == '__main__':
     round_monitor = RoundMonitor(logger)
     game_controller = GameController(round_monitor, logger)
 
+    # Test running the instruction group
+    #example_instructions = ["upgrade boat1 1 1 1"]
+    #game_controller.run_instruction_group(example_instructions)
+
     time.sleep(5) # Give 5 seconds to switch to the game window
-    #game_controller.run_start_map_instructions()
-    #round_monitor.start_monitoring()
-    
+    game_controller.run_start_map_instructions()
+    round_monitor.start_monitoring()
+
+    '''
     while True:
         game_controller.map_ended = False
         game_controller.start_collection_game()
@@ -42,3 +47,5 @@ if __name__ == '__main__':
         if round_monitor.ROUND_COUNTER_FAILS > 120:
             game_controller.click_at_position('END_GAME_HOME_BUTTON')
             round_monitor.ROUND_COUNTER_FAILS = 0
+    '''
+    

@@ -75,7 +75,7 @@ class GameController:
             if instruction_type == 'place':
                 self.place_tower(instruction[1])
             elif instruction_type == 'upgrade':
-                self.upgrade_tower(instruction[1], int(instruction[2]))
+                self.upgrade_tower(instruction[1], instruction[2:])
 
             time.sleep(.5) # Wait for the game to catch up
     
@@ -98,24 +98,26 @@ class GameController:
         time.sleep(.4)
         pyautogui.click(pos[0], pos[1])
 
-    def upgrade_tower(self, tower_id, upgrade_path):
+    def upgrade_tower(self, tower_id, upgrade_paths):
         """Upgrade a tower on the map.
 
         Args:
             tower_id (str): ID of the tower to upgrade.
-            upgrade_id (str): Path of the upgrade to apply. 
+            upgrade_id (list): List of the upgrades to apply. 
                               1 is top path, 2 is middle, 3 is bottom.
         """
-        self.logger.info(f"Upgrading {tower_id} on path {upgrade_path}")
-
+        self.logger.info(f"Upgrading {tower_id} on path {upgrade_paths}")
         pos = self.map_settings['towers'][tower_id]['coords']
-        upgrade_path = 'UPGRADE_TOP' if upgrade_path == 1 else 'UPGRADE_MIDDLE' if upgrade_path == 2 else 'UPGRADE_BOTTOM'
-
-        upgrade_shortcut = self.global_settings['tower_shortcuts'][upgrade_path]
         pyautogui.click(pos[0], pos[1])
-        time.sleep(.3)
-        pyautogui.press(upgrade_shortcut)
-        time.sleep(.3)
+
+        for upgrade_path in upgrade_paths:
+            upgrade_path = int(upgrade_path)
+            upgrade_path = 'UPGRADE_TOP' if upgrade_path == 1 else 'UPGRADE_MIDDLE' if upgrade_path == 2 else 'UPGRADE_BOTTOM'
+
+            upgrade_shortcut = self.global_settings['tower_shortcuts'][upgrade_path]
+            time.sleep(.3)
+            pyautogui.press(upgrade_shortcut)
+            time.sleep(.1)
         pyautogui.press('esc')
 
     def start_collection_game(self):

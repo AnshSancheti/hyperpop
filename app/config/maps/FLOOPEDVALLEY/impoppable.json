@@ -24,12 +24,12 @@
     }
   },
   "instructions": {
-    "milestones": [7, 8, 18],
+    "milestones": [7, 8, 18, 20, 23],
     "start": ["place bricknell", "place sub1"],
     "7": ["place sub2"],
     "8": ["place boat1"],
-    "18": ["upgrade boat1 1", "upgrade boat1 1", "upgrade boat1 1"],
-    "20": ["upgrade boat1 2", "upgrade boat1 2"],
-    "23": ["upgrade sub1 1", "upgrade sub1 1", "upgrade sub1 1"]
+    "18": ["upgrade boat1 1 1 1"],
+    "20": ["upgrade boat1 2 2"],
+    "23": ["upgrade sub1 1 1 1"]
   }
 }
