@@ -29,3 +29,4 @@ if __name__ == '__main__':
         # start monitoring once game has started
         round_monitor.start_monitoring()
         game_controller.run_start_map_instructions()
+        round_monitor.stop_monitoring()
