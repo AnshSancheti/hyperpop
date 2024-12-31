@@ -107,6 +107,8 @@ class GameController:
                 self.place_tower(instruction[1])
             elif instruction_type == 'upgrade':
                 self.upgrade_tower(instruction[1], instruction[2:])
+            elif instruction_type == 'change':
+                self.change_tower_targeting(instruction[1], instruction[2])
 
             time.sleep(.5) # Wait for the game to catch up
     
@@ -151,6 +153,22 @@ class GameController:
             time.sleep(.2)
         pyautogui.press('esc')
 
+    def change_tower_targeting(self, tower_id, target_change_times):
+        """Change the targeting of a tower on the map.
+
+        Args:
+            tower_id (str): ID of the tower to upgrade.
+            target_change_times (str): Str rep of the number of times to change targeting for a tower.
+        """
+        self.logger.info(f"Changing {tower_id} targeting {target_change_times} times")
+        pos = self.map_settings['towers'][tower_id]['coords']
+        pyautogui.click(pos[0], pos[1])
+
+        for i in range(int(target_change_times)):
+            pyautogui.press('tab')
+            time.sleep(.1)        
+        pyautogui.press('esc')
+
     def start_collection_game(self):
         """
         Checks the collection game mode to determine current map
@@ -185,7 +203,8 @@ class GameController:
         self.click_at_position('COLLECTION_EVENT_EXPERT_MAP_SELECT')
         self.click_at_position('HARD_MODE_SELECT')
         self.click_at_position('IMPOPPABLE_MODE_SELECT')
-        time.sleep(5) # Wait for map to load
+        self.click_at_position('MAP_OVERWRITE_SAVE') # In case there's a save file to overwrite
+        time.sleep(4) # Wait for map to load
         self.click_at_position('IMPOPPABLE_GAMESTART_OK')
 
     def click_at_position(self, selection):

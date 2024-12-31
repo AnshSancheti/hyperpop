@@ -4,11 +4,98 @@
   "towers": {
     "etienne": {
       "type": "HERO",
-      "coords": [732, 425]
+      "coords": [469, 344]
+    },
+    "sub1": {
+      "type": "SUBMARINE",
+      "coords": [940, 218]
+    },
+    "dart1": {
+      "type": "DART",
+      "coords": [466, 200]
+    },
+    "dart2": {
+      "type": "DART",
+      "coords": [1030, 810]
+    },
+    "sniper": {
+      "type": "SNIPER",
+      "coords": [200, 155]
+    },
+    "druid1": {
+      "type": "DRUID",
+      "coords": [800, 475]
+    },
+    "sub2": {
+      "type": "SUBMARINE",
+      "coords": [400, 590]
+    },
+    "sub3": {
+      "type": "SUBMARINE",
+      "coords": [480, 600]
+    },
+    "farm1": {
+      "type": "BANANA",
+      "coords": [933, 655]
+    },
+    "farm2": {
+      "type": "BANANA",
+      "coords": [1200, 640]
+    },
+    "farm3": {
+      "type": "BANANA",
+      "coords": [1185, 220]
+    },
+    "farm4": {
+      "type": "BANANA",
+      "coords": [1232, 758]
+    },
+    "spike": {
+      "type": "SPIKE",
+      "coords": [325, 866]
+    },
+    "ace1": {
+      "type": "ACE",
+      "coords": [830, 400]
+    },
+    "alchemist": {
+      "type": "ALCHEMIST",
+      "coords": [958, 315]
+    },
+    "boat": {
+      "type": "BUCCANEER",
+      "coords": [995, 182]
     }
   },
   "instructions": {
-    "milestones": [],
-    "start": ["place etienne"]
+    "milestones": [7, 9, 10, 11, 15, 19, 22, 28, 29, 30, 32, 33, 35, 36, 38, 39, 42, 44, 46, 47],
+    "start": ["place sub1", "place dart1", "place dart2", "upgrade sub1 1 1"],
+    "7": ["place sniper"],
+    "9": ["place druid1"],
+    "10": ["upgrade sub1 3"],
+    "11": ["place etienne"],
+    "15": ["place sub2", "upgrade sub2 1 1 3"],
+    "19": ["upgrade sub1 3", "upgrade sniper 1"],
+    "22": ["place farm1"],
+    "28": ["upgrade farm1 3 3 3"],
+    "29": ["upgrade sniper 3 3"],
+    "30": ["upgrade sniper 1"],
+    "32": ["upgrade dart2 3 3 3 2 2"],
+    "33": ["place spike"],
+    "35": ["upgrade sniper 3", "upgrade sub2 3"],
+    "36": ["upgrade sub1 3"],
+    "38": ["upgrade sub1 3"],
+    "39": ["place farm2", "upgrade farm2 3 3 3 2 2", "upgrade farm1 2 2"],
+    "42": ["upgrade druid1 2 2 2 2 1"],
+    "44": ["upgrade sub2 3 3"],
+    "45": ["place farm3"],
+    "46": ["upgrade farm3 3 3 3 2 2"],
+    "47": ["upgrade sniper 3"],
+    "53": ["place ace1", "upgrade ace1 3 3 3 3 1 1", "change ace1 1"],
+    "55": ["place alchemist", "upgrade alchemist 1 1 1 2"],
+    "56": ["place farm4", "upgrade farm4 3 3 3 2 2"],
+    "75": ["upgrade ace1 3"],
+    "80": ["place boat", "upgrade boat 1 1 1 1 1 3 3"],
+    "85": ["place sub3", "upgrade sub3 1 1 2 2 2 2 2", "change sub3 3"]
   }
 }
