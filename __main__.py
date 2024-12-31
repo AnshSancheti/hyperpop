@@ -18,32 +18,34 @@ def setup_logger(name):
 
 if __name__ == '__main__':
     logger = setup_logger('btd6')
-    logger.info('----Starting BTD6 Auto Clicker----')
+    logger.info('-----------Starting BTD6 Auto Player------------')
 
     round_monitor = RoundMonitor(logger)
     game_controller = GameController(round_monitor, logger)
-
-    # Test running the instruction group
-    #example_instructions = ["upgrade boat1 1 1 1"]
-    #game_controller.run_instruction_group(example_instructions)
 
     time.sleep(5) # Give 5 seconds to switch to the game window
     #game_controller.run_start_map_instructions()
     #round_monitor.start_monitoring()
     
+    
+    round_monitor.start_monitoring()
     while True:
+        logger.info("$$$$ Starting new map")
         game_controller.map_ended = False
         game_controller.start_collection_game()
-        # start monitoring once game has started
-        round_monitor.start_monitoring()
         game_controller.run_start_map_instructions()
 
         # 2 minutes of failed round counter likely means game is over, go home
-        while round_monitor.ROUND_COUNTER_FAILS <= 120 and not game_controller.map_ended:
-            time.sleep(1) 
-        round_monitor.stop_monitoring()
+        while round_monitor.ROUND_COUNTER_FAILS <= 300 and not game_controller.map_ended:
+            if round_monitor.ROUND_COUNTER_FAILS > 0 and round_monitor.ROUND_COUNTER_FAILS % 90 == 0:
+                logger.info(f"Failed 1.5 minutes of OCR, assuming level up screen")
+                # arbitrary clicks to get through level up screen
+                game_controller.click_at_position('INSTASELECTOK') 
+                game_controller.click_at_position('INSTASELECTOK')
+            time.sleep(.5) 
 
-        if round_monitor.ROUND_COUNTER_FAILS > 120:
+        if round_monitor.ROUND_COUNTER_FAILS > 300:
+            logger.info(f"Failed 5 minutes of OCR, assuming game over and goign back home")
             game_controller.click_at_position('DEFEAT_GAME_HOME_BUTTON')
             round_monitor.ROUND_COUNTER_FAILS = 0
             time.sleep(3)

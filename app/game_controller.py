@@ -13,7 +13,7 @@ class GameController:
         self.round_monitor.add_round_change_listener(self.handle_round_change)
         self.logger = logger
         self.global_settings = Settings().load_global_settings()
-        self.map = 'DARKCASTLE' # Default map for testing
+        self.map = 'OLACIALTRAIL' # Default map for testing
         self.map_settings = Settings().load_map_settings(self.map, 'impoppable')
         self.milestone_rounds = self.map_settings['instructions']['milestones']
         self.map_ended = False
@@ -44,6 +44,7 @@ class GameController:
         """
         Run the instructions to start the map.
         """
+        self.round_monitor.CUR_ROUND = 5 # Reset the round counter for a new map
         instructions = self.map_settings['instructions']['start']
         time.sleep(1)
         self.run_instruction_group(instructions)

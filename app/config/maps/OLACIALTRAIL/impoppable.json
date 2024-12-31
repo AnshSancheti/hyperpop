@@ -1,0 +1,90 @@
+{
+  "startRound": 6,
+  "hero": "SAUDA",
+  "towers": {
+    "sauda": {
+      "type": "HERO",
+      "coords": [910, 540]
+    },
+    "druid": {
+      "type": "DRUID",
+      "coords": [1079, 612]
+    },
+    "wizard1": {
+      "type": "WIZARD",
+      "coords": [225, 510]
+    },
+    "wizard2": {
+      "type": "WIZARD",
+      "coords": [128, 396]
+    },
+    "bomb": {
+      "type": "BOMB",
+      "coords": [164, 518]
+    },
+    "farm1": {
+      "type": "BANANA",
+      "coords": [970, 136]
+    },
+    "farm2": {
+      "type": "BANANA",
+      "coords": [1102, 136]
+    },
+    "farm3": {
+      "type": "BANANA",
+      "coords": [1231, 136]
+    },
+    "farm4": {
+      "type": "BANANA",
+      "coords": [1231, 253]
+    },
+    "farm5": {
+      "type": "BANANA",
+      "coords": [1100, 253]
+    },
+    "boomer": {
+      "type": "BOOMERANG",
+      "coords": [1077, 666]
+    },
+    "heli": {
+      "type": "HELI",
+      "coords": [1230, 875]
+    },
+    "spike": {
+      "type": "SPIKE",
+      "coords": [50, 690]
+    }
+  },
+  "instructions": {
+    "milestones": [8, 10, 19, 22, 23, 32, 33, 34, 37, 38, 43],
+    "start": ["place sauda"],
+    "8": ["place druid", "upgrade druid 2"],
+    "10": ["place wizard1", "upgrade wizard1 2 2"],
+    "19": ["upgrade druid 2 2 1 1"],
+    "22": ["place bomb", "upgrade bomb 3 3 3 1 1"],
+    "23": ["upgrade wizard1 3 3"],
+    "32": ["place wizard2", "upgrade wizard2 3 3 3"],
+    "33": ["upgrade wizard2 3 2 2"],
+    "34": ["place farm1"],
+    "37": ["upgrade farm1 3 3 3 2 2"],
+    "38": ["upgrade bomb 3"],
+    "41": ["place farm2", "upgrade farm2 3 3 3 2 2"],
+    "43": ["place farm3", "upgrade farm3 3 3 3 2 2"],
+    "44": ["place boomer", "upgrade boomer 3 3 3 3 2 2"],
+    "46": ["upgrade wizard2 3 3"],
+    "49": ["upgrade druid 2"],
+    "50": [
+      "place farm4",
+      "upgrade farm4 3 3 3 2 2",
+      "place farm5",
+      "upgrade farm5 3 3 3 2 2"
+    ],
+    "54": ["place heli", "upgrade heli 1 1 3 3 3 3"],
+    "58": ["upgrade wizard2 3"],
+    "66": ["upgrade druid 2"],
+    "73": ["upgrade bomb 3"],
+    "82": ["place spike", "upgrade spike 1 1 2 2 2 2 2"],
+    "85": ["upgrade boomer"],
+    "90": ["upgrade heli 3"]
+  }
+}

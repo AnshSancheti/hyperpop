@@ -75,7 +75,7 @@ class ImageToTextReader:
                 config=f"-c tessedit_char_whitelist={charwhitelist} --psm 7", 
                 nice=1)
             
-            return text.strip()
+            return self.text_postprocessing(text.strip())
         
         except Exception as e:
             print(f"An error occurred: {str(e)}")
@@ -101,7 +101,7 @@ class ImageToTextReader:
                 config=f"-c tessedit_char_whitelist=0123456789/ --psm 7", 
                 nice=1)
 
-            return text.strip()       
+            return self.text_postprocessing(text.strip())
         except Exception as e:
             print(f"An error occurred: {str(e)}")
             return None
@@ -172,6 +172,19 @@ class ImageToTextReader:
             draw_image.save(output_path)
         
         return draw_image, regions
+    
+    def text_postprocessing(self, text):
+        """
+        Post-process extracted text to remove unwanted characters.
+        
+        Args:
+            text: The extracted text to post-process
+        """
+
+        if len(text) >= 4 and text[-3:] == "100" and text[-4] == "7":
+            text = text[:-4] + '/' + text[-3:]
+        return text
+
 
 
 # Main function to test the ImageToTextReader class
@@ -179,6 +192,6 @@ if __name__ == '__main__':
     # Test the OCR on a set of screenshots, run from root directory
     reader = ImageToTextReader()
     for filename in os.listdir('./app/test_screenshots'):
-        reader.visualize_text_regions(f'./app/test_screenshots/{filename}')
+        #reader.visualize_text_regions(f'./app/test_screenshots/{filename}')
         text = reader.extract_text_from_screenshot(f'./app/test_screenshots/{filename}')
         print(f"Extracted text from {filename}: {text}")

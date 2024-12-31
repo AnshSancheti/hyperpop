@@ -44,7 +44,7 @@
     },
     "farm3": {
       "type": "BANANA",
-      "coords": [1185, 220]
+      "coords": [222, 632]
     },
     "farm4": {
       "type": "BANANA",
@@ -68,7 +68,10 @@
     }
   },
   "instructions": {
-    "milestones": [7, 9, 10, 11, 15, 19, 22, 28, 29, 30, 32, 33, 35, 36, 38, 39, 42, 44, 46, 47],
+    "milestones": [
+      7, 9, 10, 11, 15, 19, 22, 28, 29, 30, 32, 33, 35, 36, 38, 39, 42, 44, 45,
+      46, 47, 53, 55, 56, 75, 80, 85
+    ],
     "start": ["place sub1", "place dart1", "place dart2", "upgrade sub1 1 1"],
     "7": ["place sniper"],
     "9": ["place druid1"],
