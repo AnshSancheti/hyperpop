@@ -1,95 +1,96 @@
 {
-    "startRound": 6,
-    "hero": "ETIENNE",
-    "towers": {
-      "etienne": {
-        "type": "HERO",
-        "coords": [933, 413]
-      },
-      "farm1": {
-        "type": "BANANA",
-        "coords": [210, 130]
-      },
-      "farm2": {
-        "type": "BANANA",
-        "coords": [342, 130]
-      },
-      "farm3": {
-        "type": "BANANA",
-        "coords": [342, 245]
-      },
-      "farm4": {
-        "type": "BANANA",
-        "coords": [342, 362]
-      },
-      "ace": {
-        "type": "ACE",
-        "coords": [573, 458]
-      },
-      "sniper": {
-        "type": "SNIPER",
-        "coords": [798, 478]
-      },
-      "druid": {
-        "type": "DRUID",
-        "coords": [713, 476]
-      },
-      "alchemist1": {
-        "type": "ALCHEMIST",
-        "coords": [679, 435]
-      },
-      "alchemist2": {
-        "type": "ALCHEMIST",
-        "coords": [490, 410]
-      },
-      "boomer": {
-        "type": "BOOMERANG",
-        "coords": [740, 424]
-      },
-      "glue": {
-        "type": "GLUE",
-        "coords": [798, 428]
-      },
-      "spike": {
-        "type": "SPIKE",
-        "coords": [469, 469]
-      }
+  "startRound": 6,
+  "hero": "ETIENNE",
+  "towers": {
+    "etienne": {
+      "type": "HERO",
+      "coords": [933, 413]
     },
-    "instructions": {
-      "milestones": [8, 10, 14, 15, 17, 21, 23, 24, 25, 29, 30, 34, 38, 40, 42, 43, 46, 48, 49, 50, 51, 56, 58, 62, 74, 80, 82, 85, 89, 92, 97], 
-      "start": ["place etienne", "place druid", "upgrade druid 2", "place glue"],
-      "8": ["upgrade druid 1"],
-      "10": ["upgrade druid 1"],
-      "14": ["upgrade druid 2 2"],
-      "15": ["place sniper", "upgrade sniper 1", "change sniper 3"],
-      "17": ["upgrade sniper 2 2"],
-      "21": ["upgrade sniper 1"],
-      "23": ["place ace", "upgrade ace 3"],
-      "24": ["upgrade ace 3"],
-      "25": ["upgrade ace 1"],
-      "29": ["upgrade ace 3"],
-      "30": ["upgrade ace 1"],
-      "34": ["upgrade sniper 1"],
-      "38": ["upgrade sniper 1"],
-      "40": ["upgrade druid 2"],
-      "42": ["place farm1", "upgrade farm1 3 3 3 2 2"],
-      "43": ["place farm2", "upgrade farm2 3 3 3 2 2"],
-      "46": ["place farm3", "upgrade farm3 3 3 3 2 2"],
-      "48": ["place farm4", "upgrade farm4 3 3 3 2 2"],
-      "49": ["place alchemist1", "upgrade alchemist1 1 1 1 1 4"],
-      "50": ["upgrade glue 3 3 3 3 2 2"],
-      "51": ["place boomer", "upgrade boomer 3 3 3 3 2 2", "change boomer 3"],
-      "56": ["upgrade ace 3"],
-      "58": ["place alchemist2", "upgrade alchemist2 1 1 1 1 4"],
-      "62": ["upgrade farm1 3"],
-      "74": ["upgrade druid 2"],
-      "80": ["upgrade ace 3"],
-      "82": ["upgrade glue 3"],
-      "85": ["upgrade sniper 1"],
-      "89": ["place spike", "upgrade spike 2 2 2 2 1 1"],
-      "92": ["upgrade spike 2"],
-      "97": ["upgrade boomer 3"]
-
+    "farm1": {
+      "type": "BANANA",
+      "coords": [210, 130]
+    },
+    "farm2": {
+      "type": "BANANA",
+      "coords": [342, 130]
+    },
+    "farm3": {
+      "type": "BANANA",
+      "coords": [342, 245]
+    },
+    "farm4": {
+      "type": "BANANA",
+      "coords": [342, 362]
+    },
+    "ace": {
+      "type": "ACE",
+      "coords": [573, 458]
+    },
+    "sniper": {
+      "type": "SNIPER",
+      "coords": [798, 478]
+    },
+    "druid": {
+      "type": "DRUID",
+      "coords": [713, 476]
+    },
+    "alchemist1": {
+      "type": "ALCHEMIST",
+      "coords": [679, 435]
+    },
+    "alchemist2": {
+      "type": "ALCHEMIST",
+      "coords": [490, 410]
+    },
+    "boomer": {
+      "type": "BOOMERANG",
+      "coords": [740, 424]
+    },
+    "glue": {
+      "type": "GLUE",
+      "coords": [798, 428]
+    },
+    "spike": {
+      "type": "SPIKE",
+      "coords": [469, 469]
     }
+  },
+  "instructions": {
+    "milestones": [
+      8, 10, 14, 15, 17, 21, 23, 24, 25, 29, 30, 34, 38, 40, 42, 43, 46, 48, 49,
+      50, 51, 56, 58, 62, 74, 80, 82, 85, 89, 92, 97
+    ],
+    "start": ["place etienne", "place druid", "upgrade druid 2", "place glue"],
+    "8": ["upgrade druid 1"],
+    "10": ["upgrade druid 1"],
+    "14": ["upgrade druid 2 2"],
+    "15": ["place sniper", "upgrade sniper 1", "change sniper 3"],
+    "17": ["upgrade sniper 2 2"],
+    "21": ["upgrade sniper 1"],
+    "23": ["place ace", "upgrade ace 3"],
+    "24": ["upgrade ace 3"],
+    "25": ["upgrade ace 1"],
+    "29": ["upgrade ace 3"],
+    "30": ["upgrade ace 1"],
+    "34": ["upgrade sniper 1"],
+    "38": ["upgrade sniper 1"],
+    "40": ["upgrade druid 2"],
+    "42": ["place farm1", "upgrade farm1 3 3 3 2 2"],
+    "43": ["place farm2", "upgrade farm2 3 3 3 2 2"],
+    "46": ["place farm3", "upgrade farm3 3 3 3 2 2"],
+    "48": ["place farm4", "upgrade farm4 3 3 3 2 2"],
+    "49": ["place alchemist1", "upgrade alchemist1 1 1 1 1 4"],
+    "50": ["upgrade glue 3 3 3 3 2 2"],
+    "51": ["place boomer", "upgrade boomer 3 3 3 3 2 2", "change boomer 3"],
+    "56": ["upgrade ace 3"],
+    "58": ["place alchemist2", "upgrade alchemist2 1 1 1 1 4"],
+    "62": ["upgrade farm1 3"],
+    "74": ["upgrade druid 2"],
+    "80": ["upgrade ace 3"],
+    "82": ["upgrade glue 3"],
+    "85": ["upgrade sniper 1"],
+    "89": ["place spike", "upgrade spike 2 2 2 2 1 1"],
+    "92": ["upgrade spike 2"],
+    "97": ["upgrade boomer 3"]
   }
-  
+}
