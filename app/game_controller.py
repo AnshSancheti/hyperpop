@@ -13,11 +13,11 @@ class GameController:
         self.round_monitor.add_round_change_listener(self.handle_round_change)
         self.logger = logger
         self.global_settings = Settings().load_global_settings()
-        self.map = 'OLACIALTRAIL' # Default map for testing
+        self.map = 'SOUCH' # Default map for testing
         self.map_settings = Settings().load_map_settings(self.map, 'impoppable')
         self.milestone_rounds = self.map_settings['instructions']['milestones']
         self.map_ended = False
-        self.current_points = 18
+        self.current_points = 12
 
     def handle_round_change(self, current_round):
         """

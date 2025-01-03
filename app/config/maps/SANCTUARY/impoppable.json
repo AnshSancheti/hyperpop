@@ -1,0 +1,47 @@
+{
+  "startRound": 6,
+  "hero": "ETIENNE",
+  "towers": {
+    "etienne": {
+      "type": "HERO",
+      "coords": [714, 271]
+    },
+    "glue": {
+      "type": "GLUE",
+      "coords": [765, 295]
+    },
+    "ace": {
+      "type": "ACE",
+      "coords": [980, 880]
+    },
+    "druid": {
+      "type": "DRUID",
+      "coords": [215, 375]
+    },
+    "farm": {
+      "type": "BANANA",
+      "coords": []
+    },
+    "alchemist": {
+      "type": "alchemist",
+      "coords": []
+    },
+    "sniper": {
+      "type": "sniper",
+      "coords": [690, 820]
+    }
+  },
+  "instructions": {
+    "milestones": [13, 14, 16, 22, 26, 28, 30, 34, 38],
+    "start": ["place etienne", "place glue", "change glue 3", "place druid"],
+    "13": ["upgrade druid 1 2 2 2"],
+    "14": ["place ace", "upgrade ace 3"],
+    "16": ["upgrade ace 3"],
+    "22": ["upgrade ace 3"],
+    "26": ["upgrade ace 1 1"],
+    "28": ["upgrade sniper 1 1 2"],
+    "30": ["upgrade sniper 2"],
+    "34": ["upgrade sniper 1"],
+    "38": ["upgrade sniper 1"]
+  }
+}

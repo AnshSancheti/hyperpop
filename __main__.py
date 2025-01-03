@@ -49,5 +49,3 @@ if __name__ == '__main__':
             game_controller.click_at_position('DEFEAT_GAME_HOME_BUTTON')
             round_monitor.ROUND_COUNTER_FAILS = 0
             time.sleep(3)
-    
-    
