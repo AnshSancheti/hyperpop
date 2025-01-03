@@ -35,8 +35,8 @@ class GameController:
         for round in remove_rounds:
             self.milestone_rounds.remove(round)
 
-        if current_round == 100:
-            self.logger.info("Last round! Assuming it takes 20 seconds to finish")
+        if current_round >= 99:
+            self.logger.info("Second to last or last round! Assuming it takes 30 seconds to finish")
             time.sleep(20)
             self.run_end_map_instructions()
         

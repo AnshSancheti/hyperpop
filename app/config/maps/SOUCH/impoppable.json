@@ -1,0 +1,88 @@
+{
+  "startRound": 6,
+  "hero": "ETIENNE",
+  "towers": {
+    "etienne": {
+      "type": "HERO",
+      "coords": [250, 510]
+    },
+    "sub1": {
+      "type": "SUBMARINE",
+      "coords": [763, 512]
+    },
+    "sub2": {
+      "type": "SUBMARINE",
+      "coords": [746, 460]
+    },
+    "boat": {
+      "type": "BUCCANEER",
+      "coords": [727, 566]
+    },
+    "farm1": {
+      "type": "BANANA",
+      "coords": [1187, 500]
+    },
+    "farm2": {
+      "type": "BANANA",
+      "coords": [965, 790]
+    },
+    "farm3": {
+      "type": "BANANA",
+      "coords": [965, 230]
+    },
+    "farm4": {
+      "type": "BANANA",
+      "coords": [330, 230]
+    },
+    "village": {
+      "type": "VILLAGE",
+      "coords": [901, 508]
+    },
+    "ace": {
+      "type": "ACE",
+      "coords": [920, 600]
+    },
+    "alchemist": {
+      "type": "ALCHEMIST",
+      "coords": [727, 450]
+    },
+    "sniper": {
+      "type": "SNIPER",
+      "coords": [795, 615]
+    }
+  },
+  "instructions": {
+    "milestones": [9, 10, 11, 12, 13, 15, 16, 19, 21, 23, 26, 28, 33, 35, 38, 40, 42, 45, 46, 48, 49, 51, 53, 58, 64, 66, 80, 84, 90, 94], 
+    "start": ["place etienne", "place sub1", "upgrade sub1 3"],
+    "9": ["upgrade sub1 1 1"],
+    "10": ["place sub2"],
+    "11": ["upgrade sub2 1 1"],
+    "12": ["upgrade sub2 2"],
+    "13": ["place sniper", "change sniper 3"],
+    "15": ["upgrade sniper 2 2"],
+    "16": ["upgrade sniper 1"],
+    "19": ["upgrade sniper 1"],
+    "21": ["upgrade sub1 3"],
+    "23": ["upgrade sub2 2"],
+    "26": ["upgrade sub2 2", "change sub2 3"],
+    "28": ["upgrade sub1 3"],
+    "33": ["upgrade sub1 3"],
+    "35": ["upgrade sniper 1"],
+    "38": ["upgrade sniper 1"],
+    "40": ["place farm1", "upgrade farm1 3 3 3 2 2"],
+    "42": ["place farm2", "upgrade farm2 3 3 3 2 2"],
+    "45": ["place farm3", "upgrade farm3 3 3 3 2 2"],
+    "46": ["place farm4", "upgrade farm4 3 3 3 2 2"],
+    "48": ["place boat", "upgrade boat 1 1 1 3 3"],
+    "49": ["upgrade boat 1"],
+    "51": ["place village", "upgrade village 1 1 2 2 2"],
+    "53": ["place ace", "upgrade ace 3 3 3 1 1", "change ace 1"],
+    "58": ["upgrade boat 1"],
+    "64": ["upgrade ace 3"],
+    "66": ["place alchemist", "upgrade alchemist 1 1 1 1 2"],
+    "80": ["upgrade ace 3"],
+    "84": ["upgrade sniper 1"], 
+    "90": ["upgrade sub2 2 2"],
+    "94": ["upgrade sub1 3"]
+  }
+}
