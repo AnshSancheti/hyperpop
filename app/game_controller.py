@@ -13,11 +13,12 @@ class GameController:
         self.round_monitor.add_round_change_listener(self.handle_round_change)
         self.logger = logger
         self.global_settings = Settings().load_global_settings()
-        self.map = 'SOUCH' # Default map for testing
+        self.map = 'WORKSHOP' # Default map for testing
         self.map_settings = Settings().load_map_settings(self.map, 'impoppable')
         self.milestone_rounds = self.map_settings['instructions']['milestones']
         self.map_ended = False
-        self.current_points = 12
+        self.current_points = 22
+        self.points_per_run = 55
 
     def handle_round_change(self, current_round):
         """
@@ -90,7 +91,7 @@ class GameController:
             time.sleep(1)
             self.click_at_position('BACK_BUTTON')
             time.sleep(2)
-            self.current_points -= 70
+            self.current_points -= self.points_per_run
         self.map_ended = True
 
     def run_instruction_group(self, instructions):

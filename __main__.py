@@ -24,10 +24,9 @@ if __name__ == '__main__':
     game_controller = GameController(round_monitor, logger)
 
     time.sleep(5) # Give 5 seconds to switch to the game window
-    game_controller.run_start_map_instructions()
-    round_monitor.start_monitoring()
+    #game_controller.run_start_map_instructions()
+    #round_monitor.start_monitoring()
     
-    '''
     round_monitor.start_monitoring()
     while True:
         logger.info("$$$$ Starting new map")
@@ -48,7 +47,4 @@ if __name__ == '__main__':
             logger.info(f"Failed 5 minutes of OCR, assuming game over and goign back home")
             game_controller.click_at_position('DEFEAT_GAME_HOME_BUTTON')
             round_monitor.ROUND_COUNTER_FAILS = 0
-            time.sleep(3)
-
-
-            '''
+            time.sleep(3)    
