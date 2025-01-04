@@ -1,0 +1,78 @@
+{
+    "startRound": 6,
+    "hero": "ETIENNE",
+    "towers": {
+      "etienne": {
+        "type": "HERO",
+        "coords": [535, 275]
+      },
+      "farm1": {
+        "type": "BANANA",
+        "coords": [1130, 885]
+      },
+      "farm2": {
+        "type": "BANANA",
+        "coords": [160, 834]
+      },
+      "farm3": {
+        "type": "BANANA",
+        "coords": [960, 430]
+      },
+      "ace": {
+        "type": "ACE",
+        "coords": [420, 740]
+      },
+      "druid1": {
+        "type": "DRUID",
+        "coords": [570, 736]
+      },
+      "druid2": {
+        "type": "DRUID",
+        "coords": [200, 630]
+      },
+      "alchemist": {
+        "type": "ALCHEMIST",
+        "coords": [300, 690]
+      },
+      "spike": {
+        "type": "SPIKE",
+        "coords": [170, 720]
+      },
+      "boat": {
+        "type": "BUCCANEER",
+        "coords": [444, 444]
+      }
+    },
+    "instructions": {
+      "milestones": [7, 11, 12, 16, 19, 22, 23, 24, 25, 28, 30, 33, 35, 38, 40, 42, 45, 50, 51, 57, 58, 59, 79, 82, 87, 89, 96], 
+      "start": ["place etienne", "place druid1"],
+      "7": ["place druid2"],
+      "11": ["upgrade druid1 2 2"],
+      "12": ["upgrade druid1 2 1"],
+      "16": ["upgrade druid2 2 2 2"],
+      "19": ["upgrade druid1 1", "upgrade druid2 1"],
+      "22": ["upgrade druid2 1"],
+      "23": ["place farm1"],
+      "24": ["upgrade farm1 3"],
+      "25": ["upgrade farm1 3"],
+      "28": ["upgrade farm1 3"],
+      "30": ["upgrade farm1 2 2"],
+      "33": ["place boat", "upgrade boat 1 1 2 2"],
+      "35": ["upgrade boat 1"],
+      "38": ["upgrade boat 1"],
+      "40": ["upgrade druid1 2"],
+      "42": ["place farm2", "upgrade farm2 3 3 3 2 2"],
+      "45": ["place farm3", "upgrade farm3 3 3 3 2 2"],
+      "50": ["upgrade boat 1"],
+      "51": ["place ace", "upgrade ace 3 3 3 1 1", "change ace 1"],
+      "57": ["upgrade ace 3"],
+      "58": ["place alchemist", "upgrade alchemist 1 1 1 1 2"],
+      "59": ["upgrade druid2 2"],
+      "79": ["upgrade ace 3"],
+      "82": ["upgrade druid1 2"],
+      "87": ["place spike", "upgrade spike 2 2 2 2 1 1"],
+      "89": ["upgrade spike 2"],
+      "96": ["upgrade alchemist 1"]
+    }
+  }
+  
