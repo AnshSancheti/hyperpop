@@ -26,17 +26,21 @@
       "type": "BANANA",
       "coords": [970, 136]
     },
+    "farm3_2": {
+      "type": "BANANA",
+      "coords": [1200, 150]
+    },
     "farm2": {
       "type": "BANANA",
       "coords": [1102, 136]
     },
     "farm3": {
       "type": "BANANA",
-      "coords": [1231, 136]
+      "coords": [1233, 136]
     },
     "farm4": {
       "type": "BANANA",
-      "coords": [1231, 253]
+      "coords": [1233, 253]
     },
     "farm5": {
       "type": "BANANA",
@@ -56,7 +60,7 @@
     }
   },
   "instructions": {
-    "milestones": [8, 10, 19, 22, 23, 32, 33, 34, 37, 38, 43],
+    "milestones": [8, 10, 19, 22, 23, 32, 33, 35, 37, 38, 41, 43, 44, 46, 49, 50, 54, 58, 66, 73, 82, 85, 90],
     "start": ["place sauda"],
     "8": ["place druid", "upgrade druid 2"],
     "10": ["place wizard1", "upgrade wizard1 2 2"],
@@ -65,13 +69,13 @@
     "23": ["upgrade wizard1 3 3"],
     "32": ["place wizard2", "upgrade wizard2 3 3 3"],
     "33": ["upgrade wizard2 3 2 2"],
-    "34": ["place farm1"],
+    "35": ["place farm1"],
     "37": ["upgrade farm1 3 3 3 2 2"],
     "38": ["upgrade bomb 3"],
     "41": ["place farm2", "upgrade farm2 3 3 3 2 2"],
-    "43": ["place farm3", "upgrade farm3 3 3 3 2 2"],
+    "43": ["place farm3", "upgrade farm3_2 3 3 3 2 2"],
     "44": ["place boomer", "upgrade boomer 3 3 3 3 2 2"],
-    "46": ["upgrade wizard2 3 3"],
+    "46": ["upgrade wizard1 3 3"],
     "49": ["upgrade druid 2"],
     "50": [
       "place farm4",

@@ -36,15 +36,15 @@ if __name__ == '__main__':
 
         # 2 minutes of failed round counter likely means game is over, go home
         while round_monitor.ROUND_COUNTER_FAILS <= 300 and not game_controller.map_ended:
-            if round_monitor.ROUND_COUNTER_FAILS > 0 and round_monitor.ROUND_COUNTER_FAILS % 90 == 0:
+            if round_monitor.ROUND_COUNTER_FAILS > 0 and round_monitor.ROUND_COUNTER_FAILS % 180 == 0:
                 logger.info(f"Failed 1.5 minutes of OCR, assuming level up screen")
                 # arbitrary clicks to get through level up screen
                 game_controller.click_at_position('INSTASELECTOK') 
                 game_controller.click_at_position('INSTASELECTOK')
             time.sleep(.5) 
 
-        if round_monitor.ROUND_COUNTER_FAILS > 300:
+        if round_monitor.ROUND_COUNTER_FAILS > 600:
             logger.info(f"Failed 5 minutes of OCR, assuming game over and goign back home")
             game_controller.click_at_position('DEFEAT_GAME_HOME_BUTTON')
             round_monitor.ROUND_COUNTER_FAILS = 0
-            time.sleep(3)    
+            time.sleep(3)   

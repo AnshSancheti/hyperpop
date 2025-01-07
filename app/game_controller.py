@@ -13,12 +13,12 @@ class GameController:
         self.round_monitor.add_round_change_listener(self.handle_round_change)
         self.logger = logger
         self.global_settings = Settings().load_global_settings()
-        self.map = 'WORKSHOP' # Default map for testing
+        self.map = 'SANCTUARY' # Default map for testing
         self.map_settings = Settings().load_map_settings(self.map, 'impoppable')
         self.milestone_rounds = self.map_settings['instructions']['milestones']
         self.map_ended = False
-        self.current_points = 22
-        self.points_per_run = 55
+        self.current_points = 68
+        self.points_per_run = 54
 
     def handle_round_change(self, current_round):
         """
@@ -38,7 +38,7 @@ class GameController:
 
         if current_round >= 99:
             self.logger.info("Second to last or last round! Assuming it takes 30 seconds to finish")
-            time.sleep(20)
+            time.sleep(30)
             self.run_end_map_instructions()
         
     def run_start_map_instructions(self):
@@ -130,6 +130,8 @@ class GameController:
         if tower_type == 'HERO':
             time.sleep(.4) # Sometimes heros just wont select? idk
             pyautogui.press(shortcut)
+        time.sleep(.2)
+        pyautogui.press(shortcut)
         time.sleep(.4)
         pyautogui.click(pos[0], pos[1])
 

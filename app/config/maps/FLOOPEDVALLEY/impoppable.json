@@ -62,7 +62,7 @@
   "instructions": {
     "milestones": [
       7, 8, 18, 20, 22, 23, 26, 31, 35, 39, 42, 44, 50, 51, 52, 58, 69, 71, 77,
-      83, 99
+      83, 96, 99
     ],
     "start": ["place bricknell", "place sub1"],
     "7": ["place sub2"],
@@ -85,6 +85,7 @@
     "71": ["place sub5", "upgrade sub5 1 1 1"],
     "77": ["place glue", "upgrade glue 2 2 3 3 3 3 3"],
     "83": ["place boomer", "upgrade boomer 2 2 3 3 3 3 3"],
-    "99": ["place ace", "upgrade ace 3 3 3 3 3 1 1"]
+    "96": ["place ace", "upgrade ace 3 3 3 3 1 1"],
+    "98": ["upgrade ace 3"]
   }
 }

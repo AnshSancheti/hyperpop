@@ -60,7 +60,8 @@ class RoundMonitor:
                 and int(round_counter[0]) > self.CUR_ROUND # ensure the round has changed...
                 and int(round_counter[0]) < self.CUR_ROUND + 30 # ...but not by too much
                 and int(round_counter[0]) != self.CUR_ROUND + 10
-                and int(round_counter[0]) != self.CUR_ROUND + 11): # special cases for Ravine, 7->17
+                and int(round_counter[0]) != self.CUR_ROUND + 11
+                and int(round_counter[0]) != self.CUR_ROUND + 12): # special cases for Ravine/Workshop
                 self.CUR_ROUND = int(round_counter[0])
                 self._notify_round_change()
                 self.ROUND_COUNTER_FAILS = 0
