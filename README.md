@@ -16,7 +16,8 @@ pip install -r requirements.txt
 ```
 2. Install Tesseract OCR for your operating system (required for reading game text)
 3. Configure map strategies in maps directory. Current map strategies may not map to your computer screen and will require adjustment.
-4. run with ```python __main__.py```
+3. Open BTD6 in fullscreen
+4. run with ```python __main__.py```, and shift to the BTD6 screen
 
 
 ## Project Structure
