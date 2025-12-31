@@ -1,4 +1,8 @@
 {
+  "background_mode": false,
+  "app_name": "BloonsTD6",
+  "reference_resolution": [1511, 981],
+  "focus_delay": 0.2,
   "map_match_cutoff": 0.75,
   "tower_shortcuts": {
     "DART": "q",

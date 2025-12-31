@@ -2,6 +2,8 @@ import time, logging, sys
 from app.game_controller import GameController
 from app.round_monitor import RoundMonitor
 from app.config import Settings
+from app.img_to_str_reader import ImageToTextReader
+from app.window_capture import WindowCapture, QUARTZ_AVAILABLE
 
 def setup_logger(name):
     formatter = logging.Formatter(fmt='%(asctime)s %(levelname)-8s %(message)s',
@@ -20,10 +22,28 @@ if __name__ == '__main__':
     logger = setup_logger('btd6')
     logger.info('-----------Starting BTD6 Auto Player------------')
 
-    round_monitor = RoundMonitor(logger)
-    game_controller = GameController(round_monitor, logger)
+    # Setup background mode if available (captures screenshots without focus)
+    settings = Settings().load_global_settings()
+    background_mode = settings.get('background_mode', True) and QUARTZ_AVAILABLE
+    app_name = settings.get('app_name', 'BloonsTD6')
 
-    time.sleep(5) # Give 5 seconds to switch to the game window
+    if background_mode:
+        logger.info(f"Background mode enabled - capturing '{app_name}' window")
+        window_capture = WindowCapture(app_name)
+        img_reader = ImageToTextReader(window_capture)
+    else:
+        logger.info("Background mode disabled - using screen capture (game must be in foreground)")
+        window_capture = None
+        img_reader = ImageToTextReader()
+
+    round_monitor = RoundMonitor(logger, img_reader, window_capture)
+    game_controller = GameController(round_monitor, logger, background_mode)
+    # Share the img_reader and window_capture with game_controller
+    game_controller.img_reader = img_reader
+    game_controller.window_capture = window_capture
+
+    if not background_mode:
+        time.sleep(5) # Give 5 seconds to switch to the game window
     #game_controller.run_start_map_instructions()
     #round_monitor.start_monitoring()
     

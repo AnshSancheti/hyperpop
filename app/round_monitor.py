@@ -1,5 +1,6 @@
 import threading
 import time
+import pyautogui
 from .config import Settings
 from app.img_to_str_reader import ImageToTextReader
 
@@ -9,14 +10,41 @@ class RoundMonitor:
     This class has a single responsibility: maintaining the round counter.
     It notifies listeners when the round changes but doesn't know about specific actions.
     """
-    def __init__(self, logger):
+    def __init__(self, logger, img_reader=None, window_capture=None):
         self.CUR_ROUND = 5 # Impoppable mode starts at round 6
         self.ROUND_COUNTER_FAILS = 0
         self._running = False
         self._thread = None
         self.logger = logger
+        # Use provided img_reader (for background capture) or create default
+        self.img_reader = img_reader if img_reader else ImageToTextReader()
+        # Window capture for coordinate scaling
+        self.window_capture = window_capture
+        # Load reference resolution for coordinate scaling
+        settings = Settings().load_global_settings()
+        ref_res = settings.get('reference_resolution', [1511, 981])
+        self.ref_width = ref_res[0]
+        self.ref_height = ref_res[1]
         # List to store callback functions that want to be notified of round changes
         self._round_change_callbacks = []
+
+    def _get_scale_factors(self):
+        """Get scale factors from reference resolution to current screen size."""
+        if self.window_capture:
+            return self.window_capture.get_scale_factors(self.ref_width, self.ref_height)
+        else:
+            screen_w, screen_h = pyautogui.size()
+            return screen_w / self.ref_width, screen_h / self.ref_height
+
+    def _scale_region(self, x, y, width, height):
+        """Scale a region from reference resolution to current screen size."""
+        scale_x, scale_y = self._get_scale_factors()
+        return (
+            int(x * scale_x),
+            int(y * scale_y),
+            int(width * scale_x),
+            int(height * scale_y)
+        )
 
     def add_round_change_listener(self, callback):
         """
@@ -40,11 +68,15 @@ class RoundMonitor:
         """
         while self._running:
             settings = Settings().load_global_settings()
-            round_counter = ImageToTextReader().extract_text_from_region(
+            # Scale the round counter region to current window size
+            region = self._scale_region(
                 settings['button_positions']['ROUND_COUNTER'][0],
                 settings['button_positions']['ROUND_COUNTER'][1],
                 settings['button_positions']['ROUND_DIMENSIONS'][0],
                 settings['button_positions']['ROUND_DIMENSIONS'][1]
+            )
+            round_counter = self.img_reader.extract_text_from_region(
+                region[0], region[1], region[2], region[3]
             )
 
             if round_counter is not None:

@@ -2,22 +2,39 @@ from PIL import Image, ImageEnhance, ImageFilter, ImageOps, ImageDraw
 import datetime, os, pyautogui, pytesseract
 
 class ImageToTextReader:
+    def __init__(self, window_capture=None):
+        """
+        Initialize ImageToTextReader.
+
+        Args:
+            window_capture: Optional WindowCapture instance for background capture.
+                           If None, falls back to pyautogui screen capture.
+        """
+        self.window_capture = window_capture
+
     def take_screenshot(self, x, y, width, height):
         """
-        Capture a specific region of the screen.
-        
+        Capture a specific region of the screen or window.
+
         Args:
             x (int): The x-coordinate of the top-left corner of the region
             y (int): The y-coordinate of the top-left corner of the region
             width (int): The width of the region to capture
             height (int): The height of the region to capture
-        
+
         Returns:
             Image: The screenshot of the specified region
-        """    
-        # Take a screenshot of the specified region
-        screenshot = pyautogui.screenshot(region=(x, y, width, height))
-        
+        """
+        if self.window_capture:
+            # Use window-specific capture (works in background)
+            screenshot = self.window_capture.capture_region(x, y, width, height)
+            if screenshot is None:
+                # Fallback to pyautogui if window capture fails
+                screenshot = pyautogui.screenshot(region=(x, y, width, height))
+        else:
+            # Use pyautogui screen capture (requires focus)
+            screenshot = pyautogui.screenshot(region=(x, y, width, height))
+
         # Save the screenshot to disk for debugging
         #curtime = datetime.datetime.now()
         #screenshot.save(f'./screenshot_{curtime}.png')
