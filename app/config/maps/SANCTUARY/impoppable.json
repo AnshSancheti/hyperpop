@@ -36,7 +36,7 @@
     }
   },
   "instructions": {
-    "milestones": [13, 15, 17, 27, 29, 31, 33, 37, 39, 41, 45, 51, 53, 54, 75, 81, 85, 89, 95],
+    "milestones": [13, 15, 17, 27, 29, 31, 33, 37, 39, 41, 45, 51, 53, 54, 81, 85, 89, 95],
     "start": ["place etienne", "place glue", "change glue 3", "place druid"],
     "13": ["upgrade druid 1 2 2 2"],
     "15": ["place ace", "upgrade ace 3 3", "change ace 1"],

@@ -17,7 +17,7 @@ class GameController:
         self.map_settings = Settings().load_map_settings(self.map, 'impoppable')
         self.milestone_rounds = self.map_settings['instructions']['milestones']
         self.map_ended = False
-        self.current_points = 68
+        self.current_points = 0
         self.points_per_run = 54
 
     def handle_round_change(self, current_round):
@@ -180,18 +180,30 @@ class GameController:
         """
         self.click_at_position('COLLECTION_EVENT_SELECT')
         self.click_at_position('COLLECTION_EVENT_START')
-        time.sleep(.5)
+        time.sleep(1)
         
         # Determine map selection, and update class map variables
-        map_name = ImageToTextReader().extract_text_from_region(
+        ocr_map_name = ImageToTextReader().extract_text_from_region(
             self.global_settings['button_positions']['COLLECTION_EVENT_EXPERT_MAP_TOPLEFT'][0],
             self.global_settings['button_positions']['COLLECTION_EVENT_EXPERT_MAP_TOPLEFT'][1],
             self.global_settings['button_positions']['COLLECTION_EVENT_EXPER_MAP_DIMENSIONS'][0],
             self.global_settings['button_positions']['COLLECTION_EVENT_EXPER_MAP_DIMENSIONS'][1],
             'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         )
-        self.logger.info(f"Map name: {map_name}")
-        self.map = map_name
+        self.logger.info(f"OCR map name: {ocr_map_name}")
+
+        # Use fuzzy matching to find the best map match
+        cutoff = self.global_settings.get('map_match_cutoff', 0.75)
+        matched_map, score = Settings().find_best_map_match(ocr_map_name, cutoff)
+
+        if matched_map:
+            if matched_map != ocr_map_name:
+                self.logger.info(f"Fuzzy matched '{ocr_map_name}' -> '{matched_map}' (score: {score:.2f})")
+            self.map = matched_map
+        else:
+            self.logger.warning(f"No map match found for '{ocr_map_name}' with cutoff {cutoff}. Using raw OCR text.")
+            self.map = ocr_map_name
+
         self.map_settings = Settings().load_map_settings(self.map, 'impoppable')
         self.milestone_rounds = self.map_settings['instructions']['milestones']
 

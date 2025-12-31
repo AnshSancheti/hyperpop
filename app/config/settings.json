@@ -1,4 +1,5 @@
 {
+  "map_match_cutoff": 0.75,
   "tower_shortcuts": {
     "DART": "q",
     "BOOMERANG": "w",
@@ -38,7 +39,7 @@
     "BRICKNELL_SELECT": [100, 900],
     "HERO_SELECT_CONFIRM": [900, 580],
     "BACK_BUTTON": [70, 90],
-    "COLLECTION_EVENT_SELECT": [1440, 340],
+    "COLLECTION_EVENT_SELECT": [1440, 220],
     "COLLECTION_EVENT_START": [1440, 880],
     "HARD_MODE_SELECT": [1050, 390],
     "GAME_START_STANDARD": [470, 560],
