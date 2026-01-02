@@ -4,7 +4,7 @@
     "towers": {
       "etienne": {
         "type": "HERO",
-        "coords": [645, 382]
+        "coords": [650, 370]
       },
       "farm1": {
         "type": "BANANA",
@@ -12,7 +12,7 @@
       },
       "farm2": {
         "type": "BANANA",
-        "coords": [1233, 538]
+        "coords": [1238, 536]
       },
       "ace": {
         "type": "ACE",
@@ -28,7 +28,7 @@
       },
       "boat": {
         "type": "BUCCANEER",
-        "coords": [380, 720]
+        "coords": [360, 706]
       },
       "alchemist": {
         "type": "ALCHEMIST",

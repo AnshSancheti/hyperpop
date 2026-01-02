@@ -4,23 +4,23 @@
   "towers": {
     "etienne": {
       "type": "HERO",
-      "coords": [302, 475]
+      "coords": [300, 475]
     },
     "sub": {
       "type": "SUBMARINE",
-      "coords": [1095, 770]
+      "coords": [1075, 770]
     },
     "dart": {
       "type": "DART",
-      "coords": [610, 830]
+      "coords": [614, 872]
     },
     "druid": {
       "type": "DRUID",
-      "coords": [550, 800]
+      "coords": [555, 800]
     },
     "sniper1": {
       "type": "SNIPER",
-      "coords": [216, 224]
+      "coords": [220, 212]
     },
     "boat": {
       "type": "BUCCANEER",
@@ -28,15 +28,15 @@
     },
     "sniper2": {
       "type": "SNIPER",
-      "coords": [502, 298]
+      "coords": [502, 285]
     },
     "wizard": {
       "type": "WIZARD",
-      "coords": [170, 728]
+      "coords": [170, 712]
     },
     "ninja": {
       "type": "NINJA",
-      "coords": [550, 880]
+      "coords": [550, 870]
     },
     "banana": {
       "type": "BANANA",
@@ -44,7 +44,7 @@
     },
     "ace": {
       "type": "ACE",
-      "coords": [750, 582]
+      "coords": [750, 590]
     },
     "spike": {
       "type": "SPIKE",
@@ -52,7 +52,7 @@
     },
     "boomer": {
       "type": "BOOMERANG",
-      "coords": [630, 350]
+      "coords": [640, 345]
     }
   },
   "instructions": {
@@ -60,7 +60,7 @@
       7, 8, 9, 11, 15, 16, 17, 18, 20, 21, 23, 26, 30, 35, 39, 43, 44, 51, 53,
       56, 62, 66, 79, 82, 90, 95, 97, 98
     ],
-    "start": ["place etienne", "place sub", "place dart"],
+    "start": ["place sub", "place dart", "place etienne"],
     "7": ["place druid"],
     "8": ["place boat"],
     "9": ["place sniper1"],

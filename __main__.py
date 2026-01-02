@@ -51,20 +51,21 @@ if __name__ == '__main__':
     while True:
         logger.info("$$$$ Starting new map")
         game_controller.map_ended = False
-        game_controller.start_collection_game()
+        #game_controller.start_collection_game()
+        game_controller.start_dark_dungeons_game()
         game_controller.run_start_map_instructions()
 
-        # 2 minutes of failed round counter likely means game is over, go home
-        while round_monitor.ROUND_COUNTER_FAILS <= 300 and not game_controller.map_ended:
-            if round_monitor.ROUND_COUNTER_FAILS > 0 and round_monitor.ROUND_COUNTER_FAILS % 180 == 0:
-                logger.info(f"Failed 1.5 minutes of OCR, assuming level up screen")
-                # arbitrary clicks to get through level up screen
-                game_controller.click_at_position('INSTASELECTOK') 
+        # 3 minutes of failed OCR likely means defeat
+        while round_monitor.ROUND_COUNTER_FAILS <= 360 and not game_controller.map_ended:
+            # At 2 minutes of failures (240), try to clear level up screen (once)
+            if round_monitor.ROUND_COUNTER_FAILS == 240:
+                logger.info(f"Failed 2 minutes of OCR, assuming level up screen")
                 game_controller.click_at_position('INSTASELECTOK')
-            time.sleep(.5) 
+            time.sleep(.5)
 
-        if round_monitor.ROUND_COUNTER_FAILS > 600:
-            logger.info(f"Failed 5 minutes of OCR, assuming game over and goign back home")
+        # If loop exited due to OCR failures (not map_ended), assume defeat
+        if round_monitor.ROUND_COUNTER_FAILS > 360 and not game_controller.map_ended:
+            logger.info(f"Failed 3 minutes of OCR, assuming defeat - going back home")
             game_controller.click_at_position('DEFEAT_GAME_HOME_BUTTON')
-            round_monitor.ROUND_COUNTER_FAILS = 0
+            game_controller.map_ended = True
             time.sleep(3)   

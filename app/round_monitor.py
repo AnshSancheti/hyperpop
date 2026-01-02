@@ -1,6 +1,5 @@
 import threading
 import time
-import pyautogui
 from .config import Settings
 from app.img_to_str_reader import ImageToTextReader
 
@@ -18,33 +17,14 @@ class RoundMonitor:
         self.logger = logger
         # Use provided img_reader (for background capture) or create default
         self.img_reader = img_reader if img_reader else ImageToTextReader()
-        # Window capture for coordinate scaling
+        # Window capture (kept for potential future use)
         self.window_capture = window_capture
-        # Load reference resolution for coordinate scaling
-        settings = Settings().load_global_settings()
-        ref_res = settings.get('reference_resolution', [1511, 981])
-        self.ref_width = ref_res[0]
-        self.ref_height = ref_res[1]
         # List to store callback functions that want to be notified of round changes
         self._round_change_callbacks = []
 
-    def _get_scale_factors(self):
-        """Get scale factors from reference resolution to current screen size."""
-        if self.window_capture:
-            return self.window_capture.get_scale_factors(self.ref_width, self.ref_height)
-        else:
-            screen_w, screen_h = pyautogui.size()
-            return screen_w / self.ref_width, screen_h / self.ref_height
-
-    def _scale_region(self, x, y, width, height):
-        """Scale a region from reference resolution to current screen size."""
-        scale_x, scale_y = self._get_scale_factors()
-        return (
-            int(x * scale_x),
-            int(y * scale_y),
-            int(width * scale_x),
-            int(height * scale_y)
-        )
+    def _get_region(self, x, y, width, height):
+        """Return region coordinates as-is."""
+        return (x, y, width, height)
 
     def add_round_change_listener(self, callback):
         """
@@ -68,8 +48,8 @@ class RoundMonitor:
         """
         while self._running:
             settings = Settings().load_global_settings()
-            # Scale the round counter region to current window size
-            region = self._scale_region(
+            # Get the round counter region
+            region = self._get_region(
                 settings['button_positions']['ROUND_COUNTER'][0],
                 settings['button_positions']['ROUND_COUNTER'][1],
                 settings['button_positions']['ROUND_DIMENSIONS'][0],
@@ -90,7 +70,7 @@ class RoundMonitor:
                 and round_counter[1].isdigit() # ensure the total rounds is a number
                 and int(round_counter[1]) == 100 # ensure the total rounds is 100
                 and int(round_counter[0]) > self.CUR_ROUND # ensure the round has changed...
-                and int(round_counter[0]) < self.CUR_ROUND + 30 # ...but not by too much
+                and int(round_counter[0]) < self.CUR_ROUND + 6 # ...but not by too much (max 5 ahead)
                 and int(round_counter[0]) != self.CUR_ROUND + 10
                 and int(round_counter[0]) != self.CUR_ROUND + 11
                 and int(round_counter[0]) != self.CUR_ROUND + 12): # special cases for Ravine/Workshop
